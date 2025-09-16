@@ -1,34 +1,25 @@
 using System;
-using System.Messaging;
-using System.Configuration;
+// System.Messaging is not available in .NET Core/8
+// Using alternative implementation
+using Microsoft.Extensions.Configuration;
 using ContosoUniversity.Models;
 using Newtonsoft.Json;
+using System.Collections.Concurrent;
 
 namespace ContosoUniversity.Services
 {
     public class NotificationService
     {
         private readonly string _queuePath;
-        private readonly MessageQueue _queue;
+        private readonly ConcurrentQueue<Message> _messageQueue = new ConcurrentQueue<Message>();
 
-        public NotificationService()
+        public NotificationService(IConfiguration configuration = null)
         {
             // Get queue path from configuration or use default
-            _queuePath = ConfigurationManager.AppSettings["NotificationQueuePath"] ?? @".\Private$\ContosoUniversityNotifications";
-            
-            // Ensure the queue exists
-            if (!MessageQueue.Exists(_queuePath))
-            {
-                _queue = MessageQueue.Create(_queuePath);
-                _queue.SetPermissions("Everyone", MessageQueueAccessRights.FullControl);
-            }
-            else
-            {
-                _queue = new MessageQueue(_queuePath);
-            }
-            
-            // Configure queue formatter
-            _queue.Formatter = new XmlMessageFormatter(new Type[] { typeof(string) });
+            _queuePath = configuration?.GetValue<string>("NotificationQueuePath") ?? @".\Private$\ContosoUniversityNotifications";
+
+            // In .NET 8, System.Messaging is not available
+            // Using in-memory queue implementation instead
         }
 
         public void SendNotification(string entityType, string entityId, EntityOperation operation, string userName = null)
@@ -52,13 +43,14 @@ namespace ContosoUniversity.Services
                 };
 
                 var jsonMessage = JsonConvert.SerializeObject(notification);
-                var message = new Message(jsonMessage)
+                var message = new Message
                 {
+                    Body = jsonMessage,
                     Label = $"{entityType} {operation}",
                     Priority = MessagePriority.Normal
                 };
 
-                _queue.Send(message);
+                _messageQueue.Enqueue(message);
             }
             catch (Exception ex)
             {
@@ -71,14 +63,12 @@ namespace ContosoUniversity.Services
         {
             try
             {
-                var message = _queue.Receive(TimeSpan.FromSeconds(1));
-                var jsonContent = message.Body.ToString();
-                return JsonConvert.DeserializeObject<Notification>(jsonContent);
-            }
-            catch (MessageQueueException ex) when (ex.MessageQueueErrorCode == MessageQueueErrorCode.IOTimeout)
-            {
-                // No messages available
-                return null;
+                if (_messageQueue.TryDequeue(out var message))
+                {
+                    var jsonContent = message.Body.ToString();
+                    return JsonConvert.DeserializeObject<Notification>(jsonContent);
+                }
+                return null; // No messages available
             }
             catch (Exception ex)
             {
@@ -95,8 +85,8 @@ namespace ContosoUniversity.Services
 
         private string GenerateMessage(string entityType, string entityId, string entityDisplayName, EntityOperation operation)
         {
-            var displayText = !string.IsNullOrWhiteSpace(entityDisplayName) 
-                ? $"{entityType} '{entityDisplayName}'" 
+            var displayText = !string.IsNullOrWhiteSpace(entityDisplayName)
+                ? $"{entityType} '{entityDisplayName}'"
                 : $"{entityType} (ID: {entityId})";
 
             switch (operation)
@@ -114,7 +104,28 @@ namespace ContosoUniversity.Services
 
         public void Dispose()
         {
-            _queue?.Dispose();
+            // Nothing to dispose in this implementation
+        }
+
+        // Custom Message class to replace System.Messaging.Message
+        private class Message
+        {
+            public string Body { get; set; }
+            public string Label { get; set; }
+            public MessagePriority Priority { get; set; } = MessagePriority.Normal;
+        }
+
+        // Custom enum to replace System.Messaging.MessagePriority
+        private enum MessagePriority
+        {
+            Lowest = 0,
+            VeryLow = 1,
+            Low = 2,
+            Normal = 3,
+            AboveNormal = 4,
+            High = 5,
+            VeryHigh = 6,
+            Highest = 7
         }
     }
 }

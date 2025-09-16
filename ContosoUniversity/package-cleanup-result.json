@@ -1,0 +1,32 @@
+{
+  "ContosoUniversity": [
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Design",
+    "EntityFramework",
+    "System.Configuration.ConfigurationManager",
+    "bootstrap",
+    "jQuery.Validation",
+    "jQuery",
+    "NETStandard.Library",
+    "Microsoft.jQuery.Unobtrusive.Validation",
+    "Microsoft.Data.SqlClient",
+    "Microsoft.Extensions.Logging",
+    "System.Collections.Immutable",
+    "Microsoft.Identity.Client",
+    "Microsoft.EntityFrameworkCore.Abstractions",
+    "Microsoft.EntityFrameworkCore.Analyzers",
+    "System.Runtime.CompilerServices.Unsafe",
+    "System.Threading.Tasks.Extensions",
+    "Microsoft.Data.SqlClient.SNI.runtime",
+    "Modernizr",
+    "System.Diagnostics.DiagnosticSource",
+    "Microsoft.Bcl.HashCode",
+    "Microsoft.Extensions.Primitives",
+    "System.Memory",
+    "Microsoft.Extensions.Caching.Abstractions",
+    "System.Buffers",
+    "Microsoft.Extensions.DependencyInjection",
+    "Microsoft.Bcl.AsyncInterfaces",
+    "System.Numerics.Vectors"
+  ]
+}
