@@ -1,8 +1,10 @@
 using System;
-using System.Web.Mvc;
 using ContosoUniversity.Services;
 using ContosoUniversity.Models;
 using ContosoUniversity.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+
 
 namespace ContosoUniversity.Controllers
 {
@@ -13,7 +15,12 @@ namespace ContosoUniversity.Controllers
 
         public BaseController()
         {
-            db = SchoolContextFactory.Create();
+            // Get configuration from HttpContext or use a default approach
+            var configuration = HttpContext?.RequestServices?.GetService(typeof(IConfiguration)) as IConfiguration;
+            if (configuration != null)
+            {
+                db = SchoolContextFactory.Create(configuration);
+            }
         }
 
         protected void SendEntityNotification(string entityType, string entityId, EntityOperation operation)

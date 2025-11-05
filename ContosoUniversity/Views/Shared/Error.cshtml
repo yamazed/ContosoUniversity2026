@@ -7,7 +7,7 @@
 <h1 class="text-danger">Error.</h1>
 <h2 class="text-danger">An error occurred while processing your request.</h2>
 
-@if (Model != null && HttpContext.Current.IsDebuggingEnabled)
+@if (Model != null && ViewContext.HttpContext.RequestServices.GetService(typeof(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)) is Microsoft.AspNetCore.Hosting.IWebHostEnvironment env && env.EnvironmentName == "Development")
 {
     <p>
         <strong>Exception Details:</strong> @Model.Exception.Message
