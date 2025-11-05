@@ -1,0 +1,97 @@
+==========
+References
+==========
+ContosoUniversity.Controllers
+Microsoft.AspNetCore.Mvc
+ContosoUniversity.Data
+ContosoUniversity.Services
+Microsoft.Extensions.Configuration
+ContosoUniversity.Models
+System
+System.Diagnostics
+Microsoft.EntityFrameworkCore
+Microsoft.AspNetCore.Hosting
+Microsoft.EntityFrameworkCore.Query
+System.Linq
+Microsoft.AspNetCore.Http
+Microsoft.AspNetCore.Mvc.Rendering
+System.Web
+Microsoft.AspNetCore.Mvc.ModelBinding
+System.IO
+Microsoft.EntityFrameworkCore.ChangeTracking
+ContosoUniversity.Models.SchoolViewModels
+System.Collections.Generic
+<global namespace>
+ContosoUniversity
+Microsoft.EntityFrameworkCore.Infrastructure
+Microsoft.EntityFrameworkCore.Metadata
+System.Reflection
+Microsoft.EntityFrameworkCore.Metadata.Builders
+System.ComponentModel.DataAnnotations.Schema
+System.ComponentModel.DataAnnotations
+Microsoft.AspNetCore.Builder
+Microsoft.Extensions.DependencyInjection
+Microsoft.AspNetCore.Server.Kestrel.Core
+Microsoft.Extensions.Hosting
+System.Collections.Concurrent
+Microsoft.AspNetCore.Authorization
+System.Net
+System.Threading.Tasks
+Microsoft.Extensions.Logging
+Newtonsoft.Json
+Microsoft.AspNetCore.HttpsPolicy
+project.all
+
+===============
+DownloadedFiles
+===============
+project.all.json
+system.web.json
+
+==============
+ProjectResults
+==============
+----------------------
+Showing results for: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/transformedCode/sourceCode/ContosoUniversity/ContosoUniversity.csproj
+----------------------
+---------------------------
+Target Versions:
+---------------------------
+net8.0
+---------------------------
+Source Versions:
+---------------------------
+net48
+---------------------------
+Upgrade packages:
+---------------------------
+---------------------------
+Action packages:
+---------------------------
+Microsoft.AspNetCore.SystemWebAdapters,1.4.0
+
+----------------------
+Showing results for: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/transformedCode/sourceCode/ContosoUniversity/ContosoUniversity.csproj
+----------------------
+---------------------------
+Target Versions:
+---------------------------
+net8.0
+---------------------------
+Source Versions:
+---------------------------
+net48
+---------------------------
+Upgrade packages:
+---------------------------
+---------------------------
+Action packages:
+---------------------------
+Microsoft.AspNetCore.SystemWebAdapters,1.4.0
+
+
+===========
+BuildErrors
+===========
+
+

@@ -2,10 +2,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Net;
-using System.Web.Mvc;
 using ContosoUniversity.Data;
 using ContosoUniversity.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+
+using Microsoft.AspNetCore.Http;
+
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+
 
 namespace ContosoUniversity.Controllers
 {
@@ -64,7 +69,7 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new StatusCodeResult(StatusCodes.Status400BadRequest);
             }
             Student student = db.Students
                 .Include(s => s.Enrollments)
@@ -72,7 +77,7 @@ namespace ContosoUniversity.Controllers
                 .Where(s => s.ID == id).Single();
             if (student == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             return View(student);
         }
@@ -90,7 +95,7 @@ namespace ContosoUniversity.Controllers
         // POST: Students/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LastName,FirstMidName,EnrollmentDate")] Student student)
+        public ActionResult Create([Bind("LastName,FirstMidName,EnrollmentDate")] Student student)
         {
             try
             {
@@ -131,12 +136,12 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new StatusCodeResult(StatusCodes.Status400BadRequest);
             }
             Student student = db.Students.Find(id);
             if (student == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             return View(student);
         }
@@ -144,7 +149,7 @@ namespace ContosoUniversity.Controllers
         // POST: Students/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,LastName,FirstMidName,EnrollmentDate")] Student student)
+        public ActionResult Edit([Bind("ID,LastName,FirstMidName,EnrollmentDate")] Student student)
         {
             try
             {
@@ -185,12 +190,12 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new StatusCodeResult(StatusCodes.Status400BadRequest);
             }
             Student student = db.Students.Find(id);
             if (student == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             return View(student);
         }

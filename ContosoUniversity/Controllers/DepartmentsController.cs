@@ -2,9 +2,16 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Net;
-using System.Web.Mvc;
 using ContosoUniversity.Data;
 using ContosoUniversity.Models;
+using Microsoft.AspNetCore.Mvc;
+
+using Microsoft.AspNetCore.Http;
+
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+
 
 namespace ContosoUniversity.Controllers
 {
@@ -22,12 +29,12 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new StatusCodeResult(StatusCodes.Status400BadRequest);
             }
             Department department = db.Departments.Find(id);
             if (department == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             return View(department);
         }
@@ -42,7 +49,7 @@ namespace ContosoUniversity.Controllers
         // POST: Departments/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,Budget,StartDate,InstructorID")] Department department)
+        public ActionResult Create([Bind("Name,Budget,StartDate,InstructorID")] Department department)
         {
             if (ModelState.IsValid)
             {
@@ -64,12 +71,12 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new StatusCodeResult(StatusCodes.Status400BadRequest);
             }
             Department department = db.Departments.Find(id);
             if (department == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             ViewBag.InstructorID = new SelectList(db.Instructors, "ID", "FullName", department.InstructorID);
             return View(department);
@@ -78,7 +85,7 @@ namespace ContosoUniversity.Controllers
         // POST: Departments/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DepartmentID,Name,Budget,StartDate,InstructorID,RowVersion")] Department department)
+        public ActionResult Edit([Bind("DepartmentID,Name,Budget,StartDate,InstructorID,RowVersion")] Department department)
         {
             try
             {
@@ -138,12 +145,12 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new StatusCodeResult(StatusCodes.Status400BadRequest);
             }
             Department department = db.Departments.Find(id);
             if (department == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             return View(department);
         }

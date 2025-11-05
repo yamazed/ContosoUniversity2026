@@ -1,34 +1,23 @@
 using System;
-using System.Messaging;
-using System.Configuration;
+using System.Collections.Concurrent;
+using Microsoft.Extensions.Configuration;
 using ContosoUniversity.Models;
 using Newtonsoft.Json;
 
 namespace ContosoUniversity.Services
 {
-    public class NotificationService
+    public class NotificationService : IDisposable
     {
-        private readonly string _queuePath;
-        private readonly MessageQueue _queue;
+        private readonly ConcurrentQueue<Notification> _queue;
+        private readonly string _queueName;
 
-        public NotificationService()
+        public NotificationService(IConfiguration configuration)
         {
-            // Get queue path from configuration or use default
-            _queuePath = ConfigurationManager.AppSettings["NotificationQueuePath"] ?? @".\Private$\ContosoUniversityNotifications";
-            
-            // Ensure the queue exists
-            if (!MessageQueue.Exists(_queuePath))
-            {
-                _queue = MessageQueue.Create(_queuePath);
-                _queue.SetPermissions("Everyone", MessageQueueAccessRights.FullControl);
-            }
-            else
-            {
-                _queue = new MessageQueue(_queuePath);
-            }
-            
-            // Configure queue formatter
-            _queue.Formatter = new XmlMessageFormatter(new Type[] { typeof(string) });
+            // Get queue name from configuration or use default
+            _queueName = configuration["NotificationQueuePath"] ?? "ContosoUniversityNotifications";
+
+            // Initialize in-memory queue
+            _queue = new ConcurrentQueue<Notification>();
         }
 
         public void SendNotification(string entityType, string entityId, EntityOperation operation, string userName = null)
@@ -51,14 +40,7 @@ namespace ContosoUniversity.Services
                     IsRead = false
                 };
 
-                var jsonMessage = JsonConvert.SerializeObject(notification);
-                var message = new Message(jsonMessage)
-                {
-                    Label = $"{entityType} {operation}",
-                    Priority = MessagePriority.Normal
-                };
-
-                _queue.Send(message);
+                _queue.Enqueue(notification);
             }
             catch (Exception ex)
             {
@@ -71,13 +53,10 @@ namespace ContosoUniversity.Services
         {
             try
             {
-                var message = _queue.Receive(TimeSpan.FromSeconds(1));
-                var jsonContent = message.Body.ToString();
-                return JsonConvert.DeserializeObject<Notification>(jsonContent);
-            }
-            catch (MessageQueueException ex) when (ex.MessageQueueErrorCode == MessageQueueErrorCode.IOTimeout)
-            {
-                // No messages available
+                if (_queue.TryDequeue(out Notification notification))
+                {
+                    return notification;
+                }
                 return null;
             }
             catch (Exception ex)
@@ -95,8 +74,8 @@ namespace ContosoUniversity.Services
 
         private string GenerateMessage(string entityType, string entityId, string entityDisplayName, EntityOperation operation)
         {
-            var displayText = !string.IsNullOrWhiteSpace(entityDisplayName) 
-                ? $"{entityType} '{entityDisplayName}'" 
+            var displayText = !string.IsNullOrWhiteSpace(entityDisplayName)
+                ? $"{entityType} '{entityDisplayName}'"
                 : $"{entityType} (ID: {entityId})";
 
             switch (operation)
@@ -114,7 +93,7 @@ namespace ContosoUniversity.Services
 
         public void Dispose()
         {
-            _queue?.Dispose();
+            // ConcurrentQueue does not implement IDisposable, no cleanup needed
         }
     }
 }
