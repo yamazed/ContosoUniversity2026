@@ -10,8 +10,8 @@ namespace ContosoUniversity.Controllers
 {
     public class NotificationsController : BaseController
     {
-        public NotificationsController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration)
-            : base(context, configuration)
+        public NotificationsController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILoggerFactory loggerFactory)
+            : base(context, configuration, loggerFactory)
         {
         }
 

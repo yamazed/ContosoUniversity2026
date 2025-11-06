@@ -17,8 +17,8 @@ namespace ContosoUniversity.Controllers
 {
     public class DepartmentsController : BaseController
     {
-        public DepartmentsController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration)
-            : base(context, configuration)
+        public DepartmentsController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILoggerFactory loggerFactory)
+            : base(context, configuration, loggerFactory)
         {
         }
 

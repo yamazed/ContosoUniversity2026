@@ -21,8 +21,8 @@ namespace ContosoUniversity.Controllers
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public CoursesController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
-            : base(context, configuration)
+        public CoursesController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration, IWebHostEnvironment webHostEnvironment, Microsoft.Extensions.Logging.ILoggerFactory loggerFactory)
+            : base(context, configuration, loggerFactory)
         {
             _webHostEnvironment = webHostEnvironment;
         }

@@ -4,6 +4,7 @@ using ContosoUniversity.Models;
 using ContosoUniversity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 
 namespace ContosoUniversity.Controllers
@@ -13,10 +14,11 @@ namespace ContosoUniversity.Controllers
         protected SchoolContext db;
         protected NotificationService notificationService;
 
-        public BaseController(SchoolContext context, IConfiguration configuration)
+        public BaseController(SchoolContext context, IConfiguration configuration, ILoggerFactory loggerFactory)
         {
             this.db = context;
-            this.notificationService = new NotificationService(configuration);
+            var logger = loggerFactory.CreateLogger<NotificationService>();
+            this.notificationService = new NotificationService(configuration, logger);
         }
 
         protected void SendEntityNotification(string entityType, string entityId, EntityOperation operation)
@@ -38,13 +40,5 @@ namespace ContosoUniversity.Controllers
             }
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                notificationService?.Dispose();
-            }
-            base.Dispose(disposing);
-        }
     }
 }

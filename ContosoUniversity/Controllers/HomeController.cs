@@ -9,8 +9,8 @@ namespace ContosoUniversity.Controllers
 {
     public class HomeController : BaseController
     {
-        public HomeController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration)
-            : base(context, configuration)
+        public HomeController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILoggerFactory loggerFactory)
+            : base(context, configuration, loggerFactory)
         {
         }
 
