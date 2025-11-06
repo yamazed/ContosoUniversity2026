@@ -26,7 +26,6 @@ namespace ContosoUniversity.Models
         public string Message { get; set; }
         
         [Required]
-        [Column(TypeName = "datetime2")]
         public DateTime CreatedAt { get; set; }
         
         [StringLength(100)]
@@ -34,7 +33,6 @@ namespace ContosoUniversity.Models
         
         public bool IsRead { get; set; }
         
-        [Column(TypeName = "datetime2")]
         public DateTime? ReadAt { get; set; }
     }
     

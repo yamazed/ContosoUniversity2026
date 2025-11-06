@@ -18,6 +18,11 @@ namespace ContosoUniversity.Controllers
 {
     public class InstructorsController : BaseController
     {
+        public InstructorsController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration)
+            : base(context, configuration)
+        {
+        }
+
         // GET: Instructors - All roles can view
         public ActionResult Index(int? id, int? courseID)
         {

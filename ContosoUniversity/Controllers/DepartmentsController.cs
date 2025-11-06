@@ -17,6 +17,11 @@ namespace ContosoUniversity.Controllers
 {
     public class DepartmentsController : BaseController
     {
+        public DepartmentsController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration)
+            : base(context, configuration)
+        {
+        }
+
         // GET: Departments - All roles can view
         public ActionResult Index()
         {

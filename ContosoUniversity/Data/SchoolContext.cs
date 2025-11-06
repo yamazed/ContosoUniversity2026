@@ -23,19 +23,8 @@ namespace ContosoUniversity.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Configure all DateTime properties to use datetime2
-            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
-            {
-                var properties = entityType.ClrType.GetProperties()
-                    .Where(p => p.PropertyType == typeof(DateTime) || p.PropertyType == typeof(DateTime?));
-
-                foreach (var property in properties)
-                {
-                    modelBuilder.Entity(entityType.ClrType)
-                        .Property(property.Name)
-                        .HasColumnType("datetime2");
-                }
-            }
+            // PostgreSQL uses 'timestamp' for DateTime - no need for explicit configuration
+            // Removed SQL Server-specific datetime2 configuration
 
             modelBuilder.Entity<Course>().ToTable("Course");
             modelBuilder.Entity<Enrollment>().ToTable("Enrollment");

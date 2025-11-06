@@ -9,6 +9,11 @@ namespace ContosoUniversity.Controllers
 {
     public class HomeController : BaseController
     {
+        public HomeController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration)
+            : base(context, configuration)
+        {
+        }
+
         public ActionResult Index()
         {
             return View();

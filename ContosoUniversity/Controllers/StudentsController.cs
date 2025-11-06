@@ -16,6 +16,11 @@ namespace ContosoUniversity.Controllers
 {
     public class StudentsController : BaseController
     {
+        public StudentsController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration)
+            : base(context, configuration)
+        {
+        }
+
         // GET: Students - Admins and Teachers can view
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {

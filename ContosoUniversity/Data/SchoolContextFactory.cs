@@ -9,7 +9,7 @@ namespace ContosoUniversity.Data
         {
             var connectionString = configuration.GetConnectionString("DefaultConnection");
             var optionsBuilder = new DbContextOptionsBuilder<SchoolContext>();
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseNpgsql(connectionString);
 
             return new SchoolContext(optionsBuilder.Options);
         }

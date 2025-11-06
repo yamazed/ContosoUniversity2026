@@ -13,12 +13,10 @@ namespace ContosoUniversity.Controllers
         protected SchoolContext db;
         protected NotificationService notificationService;
 
-        public BaseController()
+        public BaseController(SchoolContext context, IConfiguration configuration)
         {
-            // Create a basic configuration for NotificationService
-            var configuration = new Microsoft.Extensions.Configuration.ConfigurationBuilder().Build();
+            this.db = context;
             this.notificationService = new NotificationService(configuration);
-            db = SchoolContextFactory.Create(configuration);
         }
 
         protected void SendEntityNotification(string entityType, string entityId, EntityOperation operation)
@@ -44,7 +42,6 @@ namespace ContosoUniversity.Controllers
         {
             if (disposing)
             {
-                db?.Dispose();
                 notificationService?.Dispose();
             }
             base.Dispose(disposing);

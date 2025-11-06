@@ -24,8 +24,11 @@ namespace ContosoUniversity
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
             // Register SchoolContext with DbContext options
+            // Configure Npgsql to use timestamp without time zone for DateTime
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+            
             builder.Services.AddDbContext<SchoolContext>(options =>
-                options.UseSqlServer(connectionString));
+                options.UseNpgsql(connectionString));
 
             // Configure Kestrel
             builder.Services.Configure<Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions>(options =>
@@ -35,13 +38,13 @@ namespace ContosoUniversity
 
             var app = builder.Build();
 
-            // Initialize database
-using (var scope = app.Services.CreateScope())
+            // Initialize database and seed data
+            using (var scope = app.Services.CreateScope())
             {
                 var context = scope.ServiceProvider.GetService<SchoolContext>();
                 if (context != null)
                 {
-                    context.Database.EnsureCreated();
+                    DbInitializer.Initialize(context);
                 }
             }
 
