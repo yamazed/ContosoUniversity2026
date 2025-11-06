@@ -22,7 +22,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="9.0.9" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="8.0.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="9.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.9" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.9" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
@@ -39,7 +39,7 @@
     <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="9.0.9" />
     <PackageReference Include="System.Buffers" Version="4.6.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.9" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.9" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="9.0.9" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.9" />
@@ -47,41 +47,7 @@
     <PackageReference Include="System.Numerics.Vectors" Version="4.6.1" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.9" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.Web.Infrastructure">
-      <HintPath>packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Helpers">
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc">
-      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Optimization">
-      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor">
-      <HintPath>packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages">
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment">
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor">
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="WebGrease">
-      <HintPath>packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Runtime">
-      <HintPath>packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+  <!-- Removed legacy ASP.NET Framework references - not needed for ASP.NET Core -->
   <ItemGroup>
     <Compile Remove="Services/LoggingService.cs"></Compile>
   </ItemGroup>
@@ -95,14 +61,8 @@
   <ItemGroup>
     <None Include="Project_Readme.txt" />
   </ItemGroup>
-  <Target Name="CopySQLClientNativeBinaries" AfterTargets="AfterBuild">
-    <!-- Copy SNI native DLLs to bin directory with expected filenames -->
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\packages\Microsoft.Data.SqlClient.SNI.runtime.2.1.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll" DestinationFiles="$(OutputPath)Microsoft.Data.SqlClient.SNI.x64.dll" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\packages\Microsoft.Data.SqlClient.SNI.runtime.2.1.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll" DestinationFiles="$(OutputPath)Microsoft.Data.SqlClient.SNI.x86.dll" SkipUnchangedFiles="true" />
-    <!-- Also copy to subdirectories for compatibility -->
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\packages\Microsoft.Data.SqlClient.SNI.runtime.2.1.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll" DestinationFolder="$(OutputPath)x64\" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\packages\Microsoft.Data.SqlClient.SNI.runtime.2.1.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll" DestinationFolder="$(OutputPath)x86\" SkipUnchangedFiles="true" />
-  </Target>
+  <!-- SQL Client native binaries are handled automatically by NuGet in .NET Core/5+ projects -->
+  <!-- Removed CopySQLClientNativeBinaries target as it's not needed for modern .NET projects -->
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" />

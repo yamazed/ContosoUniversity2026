@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,8 +23,9 @@ namespace ContosoUniversity
             // Configure Entity Framework Core with dependency injection
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-            // Register SchoolContext as a service
-            builder.Services.AddScoped<SchoolContext>();
+            // Register SchoolContext with DbContext options
+            builder.Services.AddDbContext<SchoolContext>(options =>
+                options.UseSqlServer(connectionString));
 
             // Configure Kestrel
             builder.Services.Configure<Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions>(options =>
