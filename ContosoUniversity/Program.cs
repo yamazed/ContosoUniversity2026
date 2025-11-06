@@ -20,6 +20,12 @@ namespace ContosoUniversity
             // Add services to the container
             builder.Services.AddControllersWithViews();
 
+            // Register HttpClient for NotificationService
+            builder.Services.AddHttpClient();
+
+            // Register NotificationService
+            builder.Services.AddScoped<ContosoUniversity.Services.NotificationService>();
+
             // Configure Entity Framework Core with dependency injection
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 

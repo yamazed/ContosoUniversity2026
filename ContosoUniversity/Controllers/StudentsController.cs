@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using ContosoUniversity.Data;
 using ContosoUniversity.Models;
+using ContosoUniversity.Services;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,8 +17,8 @@ namespace ContosoUniversity.Controllers
 {
     public class StudentsController : BaseController
     {
-        public StudentsController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILoggerFactory loggerFactory)
-            : base(context, configuration, loggerFactory)
+        public StudentsController(SchoolContext context, NotificationService notificationService)
+            : base(context, notificationService)
         {
         }
 

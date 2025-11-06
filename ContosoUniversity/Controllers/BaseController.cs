@@ -14,11 +14,10 @@ namespace ContosoUniversity.Controllers
         protected SchoolContext db;
         protected NotificationService notificationService;
 
-        public BaseController(SchoolContext context, IConfiguration configuration, ILoggerFactory loggerFactory)
+        public BaseController(SchoolContext context, NotificationService notificationService)
         {
             this.db = context;
-            var logger = loggerFactory.CreateLogger<NotificationService>();
-            this.notificationService = new NotificationService(configuration, logger);
+            this.notificationService = notificationService;
         }
 
         protected void SendEntityNotification(string entityType, string entityId, EntityOperation operation)

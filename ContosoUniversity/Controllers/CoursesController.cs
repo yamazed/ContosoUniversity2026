@@ -5,6 +5,7 @@ using System.Net;
 using System.IO;
 using ContosoUniversity.Data;
 using ContosoUniversity.Models;
+using ContosoUniversity.Services;
 using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.AspNetCore.Http;
@@ -21,8 +22,8 @@ namespace ContosoUniversity.Controllers
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public CoursesController(SchoolContext context, Microsoft.Extensions.Configuration.IConfiguration configuration, IWebHostEnvironment webHostEnvironment, Microsoft.Extensions.Logging.ILoggerFactory loggerFactory)
-            : base(context, configuration, loggerFactory)
+        public CoursesController(SchoolContext context, NotificationService notificationService, IWebHostEnvironment webHostEnvironment)
+            : base(context, notificationService)
         {
             _webHostEnvironment = webHostEnvironment;
         }
