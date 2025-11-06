@@ -65,23 +65,30 @@
             var notificationEl = document.createElement('div');
             notificationEl.className = 'notification notification-info';
             
+            // Use camelCase property names (ASP.NET Core default JSON serialization)
+            var operation = notification.operation || 'UNKNOWN';
+            var entityType = notification.entityType || 'Unknown';
+            var message = notification.message || 'No message';
+            var createdBy = notification.createdBy || 'System';
+            var createdAt = notification.createdAt;
+            
             // Determine notification type based on operation
             var type = 'info';
-            if (notification.Operation === 'CREATE') {
+            if (operation === 'CREATE') {
                 type = 'success';
-            } else if (notification.Operation === 'DELETE') {
+            } else if (operation === 'DELETE') {
                 type = 'warning';
             }
             
             notificationEl.className = 'notification notification-' + type;
             
-            var timeAgo = this.getTimeAgo(new Date(notification.CreatedAt));
+            var timeAgo = this.getTimeAgo(new Date(createdAt));
             
             notificationEl.innerHTML = 
                 '<button class="notification-close" onclick="NotificationSystem.closeNotification(this)">&times;</button>' +
-                '<div class="notification-title">' + notification.Operation + ' - ' + notification.EntityType + '</div>' +
-                '<div class="notification-message">' + notification.Message + '</div>' +
-                '<div class="notification-time">By ' + notification.CreatedBy + ' • ' + timeAgo + '</div>';
+                '<div class="notification-title">' + operation + ' - ' + entityType + '</div>' +
+                '<div class="notification-message">' + message + '</div>' +
+                '<div class="notification-time">By ' + createdBy + ' • ' + timeAgo + '</div>';
             
             // Add to container
             this.container.appendChild(notificationEl);

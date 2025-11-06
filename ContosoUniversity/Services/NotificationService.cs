@@ -136,16 +136,19 @@ namespace ContosoUniversity.Services
                 if (receiveResponse?.Messages?.Count > 0)
                 {
                     var message = receiveResponse.Messages[0];
-                    _logger?.LogDebug("Received message from SQS. MessageId: {MessageId}", message.MessageId);
+                    _logger?.LogDebug("Received message from SQS. MessageId: {MessageId}, Body: {Body}", message.MessageId, message.Body);
 
                     // Deserialize JSON message body to Notification object
                     var notification = JsonConvert.DeserializeObject<Notification>(message.Body);
 
                     if (notification == null)
                     {
-                        _logger?.LogWarning("Failed to deserialize notification from message body. MessageId: {MessageId}", message.MessageId);
+                        _logger?.LogWarning("Failed to deserialize notification from message body. MessageId: {MessageId}, Body: {Body}", message.MessageId, message.Body);
                         return null;
                     }
+                    
+                    _logger?.LogDebug("Deserialized notification: EntityType={EntityType}, EntityId={EntityId}, Operation={Operation}, Message={Message}, CreatedBy={CreatedBy}, CreatedAt={CreatedAt}", 
+                        notification.EntityType, notification.EntityId, notification.Operation, notification.Message, notification.CreatedBy, notification.CreatedAt);
 
                     // Delete message from queue after successful retrieval
                     var deleteRequest = new DeleteMessageRequest
