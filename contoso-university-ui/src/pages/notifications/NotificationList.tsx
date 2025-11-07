@@ -37,7 +37,7 @@ export const NotificationList = () => {
   const [filterEntityType, setFilterEntityType] = useState<string>('all');
   const [filterOperation, setFilterOperation] = useState<string>('all');
   const [filterReadStatus, setFilterReadStatus] = useState<string>('all');
-  const [autoRefresh, setAutoRefresh] = useState(false);
+  const [autoRefresh, setAutoRefresh] = useState(true); // Enable auto-refresh by default
 
   // Fetch notifications with optional auto-refresh (every 30 seconds)
   const { data: notifications, isLoading, error, refetch } = useNotifications({

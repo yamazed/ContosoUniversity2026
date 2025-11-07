@@ -14,6 +14,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import { Navigation } from './Navigation';
 import { ErrorBoundary } from './ErrorBoundary';
+import { NotificationToast } from './NotificationToast';
 
 interface LayoutProps {
   children?: ReactNode;
@@ -32,6 +33,9 @@ export const Layout = ({ children }: LayoutProps) => {
 
   return (
     <Box sx={{ display: 'flex', minHeight: '100vh', flexDirection: 'column' }}>
+      {/* Global Notification Toast */}
+      <NotificationToast />
+
       {/* AppBar */}
       <AppBar
         position="fixed"

@@ -5,3 +5,4 @@ export { ErrorBoundary } from './ErrorBoundary';
 export { ConfirmDialog } from './ConfirmDialog';
 export { PaginationComponent } from './PaginationComponent';
 export { ErrorDisplay } from './ErrorDisplay';
+export { NotificationToast } from './NotificationToast';

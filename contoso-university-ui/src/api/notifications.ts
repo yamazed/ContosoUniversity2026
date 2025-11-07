@@ -8,7 +8,15 @@ export const notificationsApi = {
    */
   getAll: async (): Promise<Notification[]> => {
     const response = await apiClient.get<ApiResponse<Notification[]>>('/notifications');
-    return response.data.data;
+    console.log('Notifications API response:', response.data);
+    
+    // Handle the ApiResponse wrapper
+    if (response.data && response.data.data) {
+      return response.data.data;
+    }
+    
+    // Fallback if response structure is different
+    return [];
   },
 
   /**
