@@ -1,0 +1,10 @@
+export { default as apiClient } from './client';
+export { studentsApi } from './students';
+export type { StudentQueryParams } from './students';
+export { coursesApi } from './courses';
+export { departmentsApi } from './departments';
+export { instructorsApi } from './instructors';
+export type { InstructorQueryParams } from './instructors';
+export { homeApi } from './home';
+export type { EnrollmentStatistic } from './home';
+export { notificationsApi } from './notifications';

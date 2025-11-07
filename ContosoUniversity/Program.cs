@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ContosoUniversity.Data;
+using ContosoUniversity.Middleware;
+using ContosoUniversity.Filters;
 
 namespace ContosoUniversity
 {
@@ -18,7 +20,29 @@ namespace ContosoUniversity
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews(options =>
+            {
+                // Add global model validation filter
+                options.Filters.Add<ValidateModelStateFilter>();
+            });
+
+            // Configure CORS for React application
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("ReactApp", policy =>
+                {
+                    policy.WithOrigins(
+                        "http://localhost:5173",  // Vite dev server default port
+                        "http://localhost:3000",  // Alternative dev port
+                        "http://localhost:4173",  // Vite preview port
+                        "https://contoso-university.netlify.app",  // Production URL (example)
+                        "https://contoso-university.vercel.app"    // Production URL (example)
+                    )
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials();
+                });
+            });
 
             // Register HttpClient for NotificationService
             builder.Services.AddHttpClient();
@@ -55,9 +79,12 @@ namespace ContosoUniversity
             }
 
             // Configure the HTTP request pipeline
+            
+            // Use global exception handler middleware for all environments
+            app.UseGlobalExceptionHandler();
+
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
 
@@ -66,8 +93,15 @@ namespace ContosoUniversity
 
             app.UseRouting();
 
+            // Enable CORS
+            app.UseCors("ReactApp");
+
             app.UseAuthorization();
 
+            // Map API controllers with /api prefix
+            app.MapControllers();
+
+            // Map MVC controllers with default route
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
