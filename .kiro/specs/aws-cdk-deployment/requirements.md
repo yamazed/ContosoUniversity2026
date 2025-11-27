@@ -7,14 +7,14 @@ This document specifies the requirements for deploying the Contoso University ap
 ## Glossary
 
 - **CDK Stack**: A unit of deployment in AWS CDK that defines a collection of AWS resources
-- **ECS (Elastic Container Service)**: AWS container orchestration service for running Docker containers
-- **Fargate**: Serverless compute engine for containers that works with ECS
+- **EC2 (Elastic Compute Cloud)**: AWS virtual server instances for running applications
+- **Auto Scaling Group**: AWS service that automatically adjusts the number of EC2 instances based on demand
 - **RDS (Relational Database Service)**: AWS managed database service
 - **ALB (Application Load Balancer)**: AWS load balancer that distributes incoming application traffic
 - **VPC (Virtual Private Cloud)**: Isolated network environment in AWS
 - **CloudFront**: AWS content delivery network (CDN) service
 - **S3 (Simple Storage Service)**: AWS object storage service
-- **ECR (Elastic Container Registry)**: AWS Docker container registry
+- **User Data**: Initialization scripts that run when EC2 instances launch
 - **ContosoUniversity API**: The main ASP.NET Core backend API that handles student, course, instructor, and department management
 - **NotificationAPI**: The separate ASP.NET Core service that handles notification operations
 - **React UI**: The frontend application built with React, TypeScript, and Vite
@@ -47,15 +47,15 @@ This document specifies the requirements for deploying the Contoso University ap
 
 ### Requirement 3
 
-**User Story:** As a DevOps engineer, I want to deploy the ASP.NET Core APIs, so that they run in a managed environment without requiring Docker.
+**User Story:** As a DevOps engineer, I want to deploy the ASP.NET Core APIs on EC2 instances, so that they run in a managed environment without requiring Docker.
 
 #### Acceptance Criteria
 
-1. WHEN .NET applications are published THEN the system SHALL publish both ContosoUniversity API and NotificationAPI to S3
-2. WHEN deploying the CDK stack THEN the system SHALL create EC2 Auto Scaling Groups for both APIs
-3. WHEN EC2 instances launch THEN the system SHALL automatically download and deploy applications from S3
+1. WHEN .NET applications are published THEN the system SHALL publish both ContosoUniversity API and NotificationAPI as self-contained deployments to S3
+2. WHEN deploying the CDK stack THEN the system SHALL create EC2 Auto Scaling Groups for both APIs with appropriate launch templates
+3. WHEN EC2 instances launch THEN the system SHALL use User Data scripts to install .NET runtime, download applications from S3, and start the services
 4. WHEN configuring EC2 instances THEN the system SHALL use appropriate instance types (t3.small for Contoso API, t3.micro for Notification API)
-5. WHEN configuring Auto Scaling THEN the system SHALL define appropriate min/max capacity and scaling policies for each service
+5. WHEN configuring Auto Scaling THEN the system SHALL define appropriate min/max capacity (min: 1, max: 3) and scaling policies based on CPU utilization
 
 ### Requirement 4
 
@@ -89,9 +89,9 @@ This document specifies the requirements for deploying the Contoso University ap
 
 1. WHEN the infrastructure is deployed THEN the system SHALL create an Amazon SQS standard queue for notifications
 2. WHEN configuring the queue THEN the system SHALL set appropriate message retention period and visibility timeout
-3. WHEN configuring IAM permissions THEN the system SHALL grant the NotificationAPI ECS task role permissions to send and receive messages from the queue
-4. WHEN configuring environment variables THEN the system SHALL inject the SQS queue URL into the NotificationAPI container
-5. WHEN configuring the AWS region THEN the system SHALL inject the AWS region into the NotificationAPI container
+3. WHEN configuring IAM permissions THEN the system SHALL grant the NotificationAPI EC2 instance role permissions to send and receive messages from the queue
+4. WHEN configuring environment variables THEN the system SHALL inject the SQS queue URL into the NotificationAPI EC2 instance via User Data
+5. WHEN configuring the AWS region THEN the system SHALL inject the AWS region into the NotificationAPI EC2 instance via User Data
 
 ### Requirement 7
 
@@ -101,9 +101,9 @@ This document specifies the requirements for deploying the Contoso University ap
 
 1. WHEN services are deployed THEN the system SHALL configure both APIs behind the same Application Load Balancer with different path-based routing rules
 2. WHEN the ContosoUniversity API needs to call NotificationAPI THEN the system SHALL use the ALB DNS name with the appropriate path prefix
-3. WHEN configuring environment variables THEN the system SHALL inject the NotificationAPI base URL into the ContosoUniversity API container
+3. WHEN configuring environment variables THEN the system SHALL inject the NotificationAPI base URL into the ContosoUniversity API EC2 instance via User Data
 4. WHEN configuring ALB listeners THEN the system SHALL route requests to /api/notifications/* to the NotificationAPI target group
-5. WHEN configuring health checks THEN the system SHALL define appropriate health check endpoints for each service
+5. WHEN configuring health checks THEN the system SHALL define appropriate health check endpoints (/health) for each service's target group
 
 ### Requirement 8
 
@@ -111,9 +111,10 @@ This document specifies the requirements for deploying the Contoso University ap
 
 #### Acceptance Criteria
 
-1. WHEN containers run THEN the system SHALL send logs to Amazon CloudWatch Logs
-2. WHEN creating log groups THEN the system SHALL organize logs by service with appropriate retention periods
+1. WHEN EC2 instances run THEN the system SHALL install and configure CloudWatch agent to send application logs to Amazon CloudWatch Logs
+2. WHEN creating log groups THEN the system SHALL organize logs by service (/aws/ec2/contoso-api and /aws/ec2/notification-api) with appropriate retention periods
 3. WHEN configuring log retention THEN the system SHALL set a default retention period of 7 days for cost optimization
+4. WHEN configuring IAM permissions THEN the system SHALL grant EC2 instance roles permissions to write logs to CloudWatch
 
 ### Requirement 9
 
@@ -121,20 +122,20 @@ This document specifies the requirements for deploying the Contoso University ap
 
 #### Acceptance Criteria
 
-1. WHEN deploying services THEN the system SHALL use environment variables to configure application behavior
-2. WHEN managing secrets THEN the system SHALL use AWS Secrets Manager for database credentials
+1. WHEN deploying services THEN the system SHALL use environment variables configured in User Data scripts to configure application behavior
+2. WHEN managing secrets THEN the system SHALL use AWS Secrets Manager for database credentials and grant EC2 instance roles permissions to read them
 3. WHEN configuring CORS THEN the system SHALL set allowed origins based on the deployed CloudFront distribution URL
-4. WHEN configuring the ContosoUniversity API THEN the system SHALL inject database connection string and NotificationAPI URL as environment variables
+4. WHEN configuring the ContosoUniversity API THEN the system SHALL inject database connection string and NotificationAPI URL as environment variables via User Data
 5. WHEN tagging resources THEN the system SHALL apply consistent tags to all AWS resources for organization
 
 ### Requirement 10
 
-**User Story:** As a developer, I want deployment tooling, so that I can deploy the application to AWS without Docker installed locally.
+**User Story:** As a developer, I want deployment tooling, so that I can deploy the application to AWS efficiently.
 
 #### Acceptance Criteria
 
-1. WHEN Dockerfiles are provided THEN the system SHALL include them in the CDK project for cloud-based building
-2. WHEN deploying infrastructure THEN the system SHALL use CDK deployment commands (synth, deploy, destroy) that handle Docker image building in AWS
-3. WHEN CDK deploys THEN the system SHALL automatically build Docker images using AWS CodeBuild or CDK bundling
+1. WHEN deploying .NET applications THEN the system SHALL provide scripts to publish applications as self-contained deployments and upload to S3
+2. WHEN deploying infrastructure THEN the system SHALL use CDK deployment commands (synth, deploy, destroy) to provision all AWS resources
+3. WHEN EC2 instances launch THEN the system SHALL automatically download and run the latest application versions from S3
 4. WHEN deploying the frontend THEN the system SHALL use CDK S3 deployment construct to upload built assets and invalidate CloudFront cache
-5. WHEN deployment completes THEN the system SHALL output important endpoints including ALB URL and CloudFront distribution URL
+5. WHEN deployment completes THEN the system SHALL output important endpoints including ALB URL, CloudFront distribution URL, and RDS endpoint

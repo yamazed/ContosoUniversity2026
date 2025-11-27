@@ -54,38 +54,35 @@
     - Enable encryption with AWS managed keys
     - _Requirements: 6.1, 6.2_
 
-- [x] 6. Implement compute infrastructure
-  - [x] 6.1 Create ComputeConstruct class and ECS cluster
-    - Create ECS cluster for Fargate services
-    - Configure cluster settings and logging
-    - _Requirements: 3.4_
+- [x] 6. Implement compute infrastructure (EC2 Auto Scaling Groups)
+  - [x] 6.1 Create ComputeConstructEC2 class
+    - Create IAM role for EC2 instances with necessary permissions
+    - Configure permissions for Secrets Manager, SQS, S3, and CloudWatch
+    - _Requirements: 3.4, 8.4, 9.2_
   
-  - [x] 6.2 Configure Docker image assets
-    - Create DockerImageAsset for ContosoUniversity API
-    - Create DockerImageAsset for NotificationAPI
-    - Configure CDK to build images in cloud and push to ECR
-    - _Requirements: 3.2, 3.3_
+  - [x] 6.2 Create ContosoUniversity API Auto Scaling Group
+    - Configure t3.small instances with Amazon Linux 2023
+    - Define user data script to install .NET 8 runtime
+    - Configure systemd service for application
+    - Download application from S3 deployment bucket
+    - Set min/max/desired capacity (1/3/1)
+    - Place instances in private subnets
+    - _Requirements: 3.1, 3.4, 3.5, 9.1, 9.4_
   
-  - [x] 6.3 Create ContosoUniversity API Fargate service
-    - Define task definition (512 CPU, 1024 MB memory)
-    - Configure container with port 80
-    - Set environment variables (connection string, NotificationAPI URL)
-    - Configure secrets from Secrets Manager
-    - Set desired count to 1
-    - _Requirements: 3.4, 3.5, 9.1, 9.4_
+  - [x] 6.3 Create NotificationAPI Auto Scaling Group
+    - Configure t3.micro instances with Amazon Linux 2023
+    - Define user data script to install .NET 8 runtime
+    - Configure systemd service for application
+    - Download application from S3 deployment bucket
+    - Set min/max/desired capacity (1/2/1)
+    - Place instances in private subnets
+    - _Requirements: 3.1, 3.4, 3.5, 6.3, 6.4, 6.5, 9.1_
   
-  - [x] 6.4 Create NotificationAPI Fargate service
-    - Define task definition (256 CPU, 512 MB memory)
-    - Configure container with port 80
-    - Set environment variables (AWS region, SQS queue URL)
-    - Configure IAM task role with SQS permissions
-    - Set desired count to 1
-    - _Requirements: 3.4, 3.5, 6.3, 6.4, 6.5, 9.1_
-  
-  - [x] 6.5 Configure CloudWatch logging
-    - Create log groups for each service
+  - [x] 6.4 Configure CloudWatch logging
+    - Install CloudWatch agent on EC2 instances
+    - Create log groups for each service (/ec2/contoso-api, /ec2/notification-api)
     - Set 7-day retention period
-    - Configure awslogs driver for containers
+    - Configure log streaming from systemd journals
     - _Requirements: 8.1, 8.2, 8.3_
 
 - [x] 7. Implement load balancer and routing
@@ -96,10 +93,11 @@
     - _Requirements: 5.3_
   
   - [x] 7.2 Configure target groups
-    - Create target group for ContosoUniversity API
-    - Create target group for NotificationAPI
+    - Create target group for ContosoUniversity API (instance type)
+    - Create target group for NotificationAPI (instance type)
     - Configure health checks for each service
     - Set deregistration delay and thresholds
+    - Attach Auto Scaling Groups to target groups
     - _Requirements: 5.4, 7.5_
   
   - [x] 7.3 Configure path-based routing
@@ -131,15 +129,15 @@
 
 - [x] 9. Configure environment variables and CORS
   - [x] 9.1 Update ContosoUniversity API environment configuration
-    - Inject database connection string from Secrets Manager
+    - Inject database credentials from Secrets Manager via user data
     - Inject NotificationAPI base URL (ALB DNS)
     - Set ASPNETCORE_ENVIRONMENT to Production
     - Configure CORS to allow CloudFront origin
     - _Requirements: 9.1, 9.3, 9.4_
   
   - [x] 9.2 Update NotificationAPI environment configuration
-    - Inject AWS region
-    - Inject SQS queue URL
+    - Inject AWS region via user data
+    - Inject SQS queue URL via user data
     - Set ASPNETCORE_ENVIRONMENT to Production
     - _Requirements: 9.1, 6.4, 6.5_
 
@@ -157,26 +155,25 @@
     - _Requirements: 1.1, 1.5_
   
   - [x] 10.3 Add stack outputs
-    - Output ALB DNS name
-    - Output CloudFront distribution URL
-    - Output database endpoint
-    - Output SQS queue URL
+    - Output ALB DNS name and URL
+    - Output CloudFront distribution URL and ID
+    - Output database endpoint and secret ARN
+    - Output SQS queue URL and ARN
+    - Output S3 bucket name and Auto Scaling Group names
+    - Output VPC ID
     - _Requirements: 10.5_
 
 - [x] 11. Create deployment scripts and documentation
   - [x] 11.1 Create deployment scripts
-    - Write script to build React UI
-    - Write script to synthesize CDK stack
-    - Write script to deploy CDK stack
-    - Write script to destroy stack
+    - Write script to build React UI (build-ui.sh)
+    - Write script to publish .NET apps to S3 (publish-apps.sh)
+    - Write script to synthesize CDK stack (synth.sh)
+    - Write script to deploy CDK stack (deploy.sh)
+    - Write script to destroy stack (destroy.sh)
+    - Write script to update running instances (update-instances.sh)
+    - Write script to check EC2 status (check-ec2-status.sh)
+    - Write script to verify deployment (verify-deployment.sh)
     - _Requirements: 10.2, 10.3_
-  
-  - [x] 11.2 Create deployment documentation
-    - Document prerequisites (AWS CLI, .NET SDK, Node.js)
-    - Document deployment steps
-    - Document environment configuration
-    - Document troubleshooting common issues
-    - _Requirements: 10.1, 10.2_
 
 - [x] 12. Validate and test deployment
   - [x] 12.1 Synthesize CloudFormation template
@@ -192,4 +189,7 @@
     - Test API access via ALB
     - Verify database connectivity
     - Test SQS message flow
+    - Verify EC2 instances are healthy and applications are running
     - _Requirements: 10.2, 10.5_
+
+
