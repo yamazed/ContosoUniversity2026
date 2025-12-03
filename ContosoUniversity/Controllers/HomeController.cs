@@ -1,13 +1,20 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
 using ContosoUniversity.Data;
 using ContosoUniversity.Models.SchoolViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+
 
 namespace ContosoUniversity.Controllers
 {
     public class HomeController : BaseController
     {
+        public HomeController(SchoolContext context, IConfiguration configuration)
+            : base(context, configuration)
+        {
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -15,7 +22,7 @@ namespace ContosoUniversity.Controllers
 
         public ActionResult About()
         {
-            IQueryable<EnrollmentDateGroup> data = 
+            IQueryable<EnrollmentDateGroup> data =
                 from student in db.Students
                 group student by student.EnrollmentDate into dateGroup
                 select new EnrollmentDateGroup()

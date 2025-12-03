@@ -1,34 +1,26 @@
 using System;
-using System.Messaging;
+using System.Collections.Concurrent;
 using System.Configuration;
 using ContosoUniversity.Models;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Configuration;
 
 namespace ContosoUniversity.Services
 {
     public class NotificationService
     {
         private readonly string _queuePath;
-        private readonly MessageQueue _queue;
+        private readonly ConcurrentQueue<QueueMessage> _queue;
+        private readonly IConfiguration _configuration;
 
-        public NotificationService()
+        public NotificationService(IConfiguration configuration)
         {
+            _configuration = configuration;
             // Get queue path from configuration or use default
-            _queuePath = ConfigurationManager.AppSettings["NotificationQueuePath"] ?? @".\Private$\ContosoUniversityNotifications";
-            
-            // Ensure the queue exists
-            if (!MessageQueue.Exists(_queuePath))
-            {
-                _queue = MessageQueue.Create(_queuePath);
-                _queue.SetPermissions("Everyone", MessageQueueAccessRights.FullControl);
-            }
-            else
-            {
-                _queue = new MessageQueue(_queuePath);
-            }
-            
-            // Configure queue formatter
-            _queue.Formatter = new XmlMessageFormatter(new Type[] { typeof(string) });
+            _queuePath = _configuration["NotificationQueuePath"] ?? @".\Private$\ContosoUniversityNotifications";
+
+            // Initialize in-memory queue
+            _queue = new ConcurrentQueue<QueueMessage>();
         }
 
         public void SendNotification(string entityType, string entityId, EntityOperation operation, string userName = null)
@@ -52,13 +44,14 @@ namespace ContosoUniversity.Services
                 };
 
                 var jsonMessage = JsonConvert.SerializeObject(notification);
-                var message = new Message(jsonMessage)
+                var message = new QueueMessage
                 {
+                    Body = jsonMessage,
                     Label = $"{entityType} {operation}",
-                    Priority = MessagePriority.Normal
+                    EnqueuedAt = DateTime.Now
                 };
 
-                _queue.Send(message);
+                _queue.Enqueue(message);
             }
             catch (Exception ex)
             {
@@ -71,12 +64,11 @@ namespace ContosoUniversity.Services
         {
             try
             {
-                var message = _queue.Receive(TimeSpan.FromSeconds(1));
-                var jsonContent = message.Body.ToString();
-                return JsonConvert.DeserializeObject<Notification>(jsonContent);
-            }
-            catch (MessageQueueException ex) when (ex.MessageQueueErrorCode == MessageQueueErrorCode.IOTimeout)
-            {
+                if (_queue.TryDequeue(out QueueMessage message))
+                {
+                    return JsonConvert.DeserializeObject<Notification>(message.Body);
+                }
+
                 // No messages available
                 return null;
             }
@@ -95,8 +87,8 @@ namespace ContosoUniversity.Services
 
         private string GenerateMessage(string entityType, string entityId, string entityDisplayName, EntityOperation operation)
         {
-            var displayText = !string.IsNullOrWhiteSpace(entityDisplayName) 
-                ? $"{entityType} '{entityDisplayName}'" 
+            var displayText = !string.IsNullOrWhiteSpace(entityDisplayName)
+                ? $"{entityType} '{entityDisplayName}'"
                 : $"{entityType} (ID: {entityId})";
 
             switch (operation)
@@ -114,7 +106,15 @@ namespace ContosoUniversity.Services
 
         public void Dispose()
         {
-            _queue?.Dispose();
+            // Clear the queue on dispose
+            while (_queue.TryDequeue(out _)) { }
+        }
+
+        private class QueueMessage
+        {
+            public string Body { get; set; }
+            public string Label { get; set; }
+            public DateTime EnqueuedAt { get; set; }
         }
     }
 }
