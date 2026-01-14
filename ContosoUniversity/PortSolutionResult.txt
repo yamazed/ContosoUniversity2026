@@ -1,0 +1,4698 @@
+==========
+References
+==========
+ContosoUniversity
+System.Web.Mvc
+System.Web.Routing
+<global namespace>
+ContosoUniversity.Controllers
+ContosoUniversity.Data
+ContosoUniversity.Services
+ContosoUniversity.Models
+System
+System.Diagnostics
+ContosoUniversity.Models.SchoolViewModels
+System.Linq
+System.Collections.Generic
+System.Net
+System.Web
+System.IO
+System.Configuration
+System.ComponentModel.DataAnnotations.Schema
+System.ComponentModel.DataAnnotations
+System.Reflection
+System.Runtime.InteropServices
+System.Messaging
+System.ComponentModel
+System.Web.Optimization
+Microsoft.EntityFrameworkCore
+System.Runtime.CompilerServices
+Newtonsoft.Json
+project.all
+
+===============
+DownloadedFiles
+===============
+project.all.json
+system.configuration.json
+system.web.json
+system.web.routing.json
+system.web.mvc.json
+
+==============
+ProjectResults
+==============
+----------------------
+Showing results for: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/ContosoUniversity.csproj
+----------------------
+---------------------------
+Target Versions:
+---------------------------
+net8.0
+---------------------------
+Source Versions:
+---------------------------
+net48
+---------------------------
+Upgrade packages:
+---------------------------
+bootstrap,->5.3.3
+jQuery,->3.7.1
+jQuery.Validation,->1.21.0
+Microsoft.jQuery.Unobtrusive.Validation,->4.0.0
+NETStandard.Library,->2.0.3
+Microsoft.Bcl.AsyncInterfaces,->9.0.9
+Microsoft.Bcl.HashCode,->6.0.0
+Microsoft.Data.SqlClient,->6.1.2
+Microsoft.Data.SqlClient.SNI.runtime,->5.1.0
+Microsoft.Identity.Client,->4.78.0
+Microsoft.EntityFrameworkCore,->9.0.10
+Microsoft.EntityFrameworkCore.Abstractions,->9.0.9
+Microsoft.EntityFrameworkCore.Analyzers,->8.0.21
+Microsoft.EntityFrameworkCore.Relational,->9.0.9
+Microsoft.EntityFrameworkCore.SqlServer,->9.0.9
+Microsoft.EntityFrameworkCore.Tools,->8.0.20
+Microsoft.Extensions.Caching.Abstractions,->9.0.9
+Microsoft.Extensions.Caching.Memory,->10.0.0
+Microsoft.Extensions.Configuration,->9.0.10
+Microsoft.Extensions.Configuration.Abstractions,->9.0.10
+Microsoft.Extensions.Configuration.Binder,->9.0.9
+Microsoft.Extensions.DependencyInjection,->9.0.10
+Microsoft.Extensions.DependencyInjection.Abstractions,->9.0.10
+Microsoft.Extensions.Logging,->9.0.10
+Microsoft.Extensions.Logging.Abstractions,->9.0.9
+Microsoft.Extensions.Options,->10.0.0
+Microsoft.Extensions.Primitives,->9.0.9
+Modernizr,->2.8.3
+Newtonsoft.Json,->13.0.4
+System.Buffers,->4.6.1
+System.Collections.Immutable,->9.0.9
+System.ComponentModel.Annotations,->5.0.0
+System.Diagnostics.DiagnosticSource,->9.0.9
+System.Memory,->4.6.3
+System.Numerics.Vectors,->4.6.1
+System.Runtime.CompilerServices.Unsafe,->6.1.2
+System.Threading.Tasks.Extensions,->4.6.3
+---------------------------
+Action packages:
+---------------------------
+System.Configuration.ConfigurationManager,*
+Microsoft.AspNetCore.SystemWebAdapters,1.4.0
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/InstructorsController.cs
+---------------------------
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status202Accepted)","oldParameters":"(HttpStatusCode.Accepted)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status208AlreadyReported)","oldParameters":"(HttpStatusCode.AlreadyReported)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300Ambiguous)","oldParameters":"(HttpStatusCode.Ambiguous)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status502BadGateway)","oldParameters":"(HttpStatusCode.BadGateway)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status400BadRequest)","oldParameters":"(HttpStatusCode.BadRequest)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status409Conflict)","oldParameters":"(HttpStatusCode.Conflict)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status100Continue)","oldParameters":"(HttpStatusCode.Continue)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status201Created)","oldParameters":"(HttpStatusCode.Created)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status103EarlyHints)","oldParameters":"(HttpStatusCode.EarlyHints)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status417ExpectationFailed)","oldParameters":"(HttpStatusCode.ExpectationFailed)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status424FailedDependency)","oldParameters":"(HttpStatusCode.FailedDependency)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status403Forbidden)","oldParameters":"(HttpStatusCode.Forbidden)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Found)","oldParameters":"(HttpStatusCode.Found)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status504GatewayTimeout)","oldParameters":"(HttpStatusCode.GatewayTimeout)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status410Gone)","oldParameters":"(HttpStatusCode.Gone)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status505HttpVersionNotSupported)","oldParameters":"(HttpStatusCode.HttpVersionNotSupported)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status226IMUsed)","oldParameters":"(HttpStatusCode.IMUsed)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status507InsufficientStorage)","oldParameters":"(HttpStatusCode.InsufficientStorage)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status500InternalServerError)","oldParameters":"(HttpStatusCode.InternalServerError)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status411LengthRequired)","oldParameters":"(HttpStatusCode.LengthRequired)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status423Locked)","oldParameters":"(HttpStatusCode.Locked)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status508LoopDetected)","oldParameters":"(HttpStatusCode.LoopDetected)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status405MethodNotAllowed)","oldParameters":"(HttpStatusCode.MethodNotAllowed)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status421MisdirectedRequest)","oldParameters":"(HttpStatusCode.MisdirectedRequest)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301Moved)","oldParameters":"(HttpStatusCode.Moved)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301MovedPermanently)","oldParameters":"(HttpStatusCode.MovedPermanently)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300MultipleChoices)","oldParameters":"(HttpStatusCode.MultipleChoices)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status207MultiStatus)","oldParameters":"(HttpStatusCode.MultiStatus)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status511NetworkAuthenticationRequired)","oldParameters":"(HttpStatusCode.NetworkAuthenticationRequired)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status204NoContent)","oldParameters":"(HttpStatusCode.NoContent)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status203NonAuthoritativeInformation)","oldParameters":"(HttpStatusCode.NonAuthoritativeInformation)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status406NotAcceptable)","oldParameters":"(HttpStatusCode.NotAcceptable)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status510NotExtended)","oldParameters":"(HttpStatusCode.NotExtended)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status404NotFound)","oldParameters":"(HttpStatusCode.NotFound)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status501NotImplemented)","oldParameters":"(HttpStatusCode.NotImplemented)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status304NotModified)","oldParameters":"(HttpStatusCode.NotModified)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status200OK)","oldParameters":"(HttpStatusCode.OK)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status206PartialContent)","oldParameters":"(HttpStatusCode.PartialContent)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status402PaymentRequired)","oldParameters":"(HttpStatusCode.PaymentRequired)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status308PermanentRedirect)","oldParameters":"(HttpStatusCode.PermanentRedirect)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status412PreconditionFailed)","oldParameters":"(HttpStatusCode.PreconditionFailed)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status428PreconditionRequired)","oldParameters":"(HttpStatusCode.PreconditionRequired)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status102Processing)","oldParameters":"(HttpStatusCode.Processing)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status407ProxyAuthenticationRequired)","oldParameters":"(HttpStatusCode.ProxyAuthenticationRequired)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Redirect)","oldParameters":"(HttpStatusCode.Redirect)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307RedirectKeepVerb)","oldParameters":"(HttpStatusCode.RedirectKeepVerb)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303RedirectMethod)","oldParameters":"(HttpStatusCode.RedirectMethod)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status416RequestedRangeNotSatisfiable)","oldParameters":"(HttpStatusCode.RequestedRangeNotSatisfiable)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status413RequestEntityTooLarge)","oldParameters":"(HttpStatusCode.RequestEntityTooLarge)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status431RequestHeaderFieldsTooLarge)","oldParameters":"(HttpStatusCode.RequestHeaderFieldsTooLarge)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status408RequestTimeout)","oldParameters":"(HttpStatusCode.RequestTimeout)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status414RequestUriTooLong)","oldParameters":"(HttpStatusCode.RequestUriTooLong)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status205ResetContent)","oldParameters":"(HttpStatusCode.ResetContent)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303SeeOther)","oldParameters":"(HttpStatusCode.SeeOther)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status503ServiceUnavailable)","oldParameters":"(HttpStatusCode.ServiceUnavailable)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status101SwitchingProtocols)","oldParameters":"(HttpStatusCode.SwitchingProtocols)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307TemporaryRedirect)","oldParameters":"(HttpStatusCode.TemporaryRedirect)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status429TooManyRequests)","oldParameters":"(HttpStatusCode.TooManyRequests)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status401Unauthorized)","oldParameters":"(HttpStatusCode.Unauthorized)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status451UnavailableForLegalReasons)","oldParameters":"(HttpStatusCode.UnavailableForLegalReasons)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableContent)","oldParameters":"(HttpStatusCode.UnprocessableContent)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableEntity)","oldParameters":"(HttpStatusCode.UnprocessableEntity)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status415UnsupportedMediaType)","oldParameters":"(HttpStatusCode.UnsupportedMediaType)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status306Unused)","oldParameters":"(HttpStatusCode.Unused)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status426UpgradeRequired)","oldParameters":"(HttpStatusCode.UpgradeRequired)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status305UseProxy)","oldParameters":"(HttpStatusCode.UseProxy)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status506VariantAlsoNegotiates)","oldParameters":"(HttpStatusCode.VariantAlsoNegotiates)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Method
+Action Name: ReplaceMethodOnly
+Action Value: {"oldMethod":"HttpNotFound","newMethod":"NotFound"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Attribute
+Action Name: RemoveNamedIdentifierFromAttributeArguments
+Action Value: Include
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Method
+Action Name: ReplaceMethodOnly
+Action Value: {"oldMethod":"TryUpdateModel","newMethod":"TryUpdateModelAsync"}
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Method
+Action Name: AddComment
+Action Value: {"comment":"Thisupdatedmethodmightrequiretheparameterstobere-organized","dontUseCTAPrefix":""}
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Http
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc.ModelBinding
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Identifier
+Action Name: ReplaceIdentifier
+Action Value: ModelStateEntry
+Times Run: 0
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Services/NotificationService.cs
+---------------------------
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/App_Start/FilterConfig.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/CoursesController.cs
+---------------------------
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status202Accepted)","oldParameters":"(HttpStatusCode.Accepted)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status208AlreadyReported)","oldParameters":"(HttpStatusCode.AlreadyReported)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300Ambiguous)","oldParameters":"(HttpStatusCode.Ambiguous)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status502BadGateway)","oldParameters":"(HttpStatusCode.BadGateway)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status400BadRequest)","oldParameters":"(HttpStatusCode.BadRequest)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status409Conflict)","oldParameters":"(HttpStatusCode.Conflict)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status100Continue)","oldParameters":"(HttpStatusCode.Continue)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status201Created)","oldParameters":"(HttpStatusCode.Created)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status103EarlyHints)","oldParameters":"(HttpStatusCode.EarlyHints)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status417ExpectationFailed)","oldParameters":"(HttpStatusCode.ExpectationFailed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status424FailedDependency)","oldParameters":"(HttpStatusCode.FailedDependency)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status403Forbidden)","oldParameters":"(HttpStatusCode.Forbidden)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Found)","oldParameters":"(HttpStatusCode.Found)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status504GatewayTimeout)","oldParameters":"(HttpStatusCode.GatewayTimeout)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status410Gone)","oldParameters":"(HttpStatusCode.Gone)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status505HttpVersionNotSupported)","oldParameters":"(HttpStatusCode.HttpVersionNotSupported)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status226IMUsed)","oldParameters":"(HttpStatusCode.IMUsed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status507InsufficientStorage)","oldParameters":"(HttpStatusCode.InsufficientStorage)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status500InternalServerError)","oldParameters":"(HttpStatusCode.InternalServerError)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status411LengthRequired)","oldParameters":"(HttpStatusCode.LengthRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status423Locked)","oldParameters":"(HttpStatusCode.Locked)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status508LoopDetected)","oldParameters":"(HttpStatusCode.LoopDetected)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status405MethodNotAllowed)","oldParameters":"(HttpStatusCode.MethodNotAllowed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status421MisdirectedRequest)","oldParameters":"(HttpStatusCode.MisdirectedRequest)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301Moved)","oldParameters":"(HttpStatusCode.Moved)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301MovedPermanently)","oldParameters":"(HttpStatusCode.MovedPermanently)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300MultipleChoices)","oldParameters":"(HttpStatusCode.MultipleChoices)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status207MultiStatus)","oldParameters":"(HttpStatusCode.MultiStatus)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status511NetworkAuthenticationRequired)","oldParameters":"(HttpStatusCode.NetworkAuthenticationRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status204NoContent)","oldParameters":"(HttpStatusCode.NoContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status203NonAuthoritativeInformation)","oldParameters":"(HttpStatusCode.NonAuthoritativeInformation)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status406NotAcceptable)","oldParameters":"(HttpStatusCode.NotAcceptable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status510NotExtended)","oldParameters":"(HttpStatusCode.NotExtended)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status404NotFound)","oldParameters":"(HttpStatusCode.NotFound)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status501NotImplemented)","oldParameters":"(HttpStatusCode.NotImplemented)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status304NotModified)","oldParameters":"(HttpStatusCode.NotModified)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status200OK)","oldParameters":"(HttpStatusCode.OK)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status206PartialContent)","oldParameters":"(HttpStatusCode.PartialContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status402PaymentRequired)","oldParameters":"(HttpStatusCode.PaymentRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status308PermanentRedirect)","oldParameters":"(HttpStatusCode.PermanentRedirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status412PreconditionFailed)","oldParameters":"(HttpStatusCode.PreconditionFailed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status428PreconditionRequired)","oldParameters":"(HttpStatusCode.PreconditionRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status102Processing)","oldParameters":"(HttpStatusCode.Processing)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status407ProxyAuthenticationRequired)","oldParameters":"(HttpStatusCode.ProxyAuthenticationRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Redirect)","oldParameters":"(HttpStatusCode.Redirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307RedirectKeepVerb)","oldParameters":"(HttpStatusCode.RedirectKeepVerb)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303RedirectMethod)","oldParameters":"(HttpStatusCode.RedirectMethod)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status416RequestedRangeNotSatisfiable)","oldParameters":"(HttpStatusCode.RequestedRangeNotSatisfiable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status413RequestEntityTooLarge)","oldParameters":"(HttpStatusCode.RequestEntityTooLarge)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status431RequestHeaderFieldsTooLarge)","oldParameters":"(HttpStatusCode.RequestHeaderFieldsTooLarge)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status408RequestTimeout)","oldParameters":"(HttpStatusCode.RequestTimeout)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status414RequestUriTooLong)","oldParameters":"(HttpStatusCode.RequestUriTooLong)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status205ResetContent)","oldParameters":"(HttpStatusCode.ResetContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303SeeOther)","oldParameters":"(HttpStatusCode.SeeOther)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status503ServiceUnavailable)","oldParameters":"(HttpStatusCode.ServiceUnavailable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status101SwitchingProtocols)","oldParameters":"(HttpStatusCode.SwitchingProtocols)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307TemporaryRedirect)","oldParameters":"(HttpStatusCode.TemporaryRedirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status429TooManyRequests)","oldParameters":"(HttpStatusCode.TooManyRequests)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status401Unauthorized)","oldParameters":"(HttpStatusCode.Unauthorized)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status451UnavailableForLegalReasons)","oldParameters":"(HttpStatusCode.UnavailableForLegalReasons)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableContent)","oldParameters":"(HttpStatusCode.UnprocessableContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableEntity)","oldParameters":"(HttpStatusCode.UnprocessableEntity)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status415UnsupportedMediaType)","oldParameters":"(HttpStatusCode.UnsupportedMediaType)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status306Unused)","oldParameters":"(HttpStatusCode.Unused)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status426UpgradeRequired)","oldParameters":"(HttpStatusCode.UpgradeRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status305UseProxy)","oldParameters":"(HttpStatusCode.UseProxy)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status506VariantAlsoNegotiates)","oldParameters":"(HttpStatusCode.VariantAlsoNegotiates)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Method
+Action Name: ReplaceMethodOnly
+Action Value: {"oldMethod":"HttpNotFound","newMethod":"NotFound"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Attribute
+Action Name: RemoveNamedIdentifierFromAttributeArguments
+Action Value: Include
+Times Run: 2
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Http
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc.Rendering
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc.ModelBinding
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Identifier
+Action Name: ReplaceIdentifier
+Action Value: ModelStateEntry
+Times Run: 0
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: Project
+---------------------------
+
+Action Type: Project
+Action Name: ArchiveFiles
+Action Value: BundleConfig.cs,FilterConfig.cs,RouteConfig.cs,WebApiConfig.cs,global.asax.cs,global.asax,AssemblyInfo.cs,packages.config
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Project
+Action Name: CreateNet8FolderHierarchy
+Action Value: 
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Project
+Action Name: MigrateConfig
+Action Value: 
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ProjectFile
+Action Name: MigrateProjectFile
+Action Value: 
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Data/SchoolContextFactory.cs
+---------------------------
+
+Action Type: MemberAccess
+Action Name: RemoveMemberAccess
+Action Value: 
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/StudentsController.cs
+---------------------------
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status202Accepted)","oldParameters":"(HttpStatusCode.Accepted)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status208AlreadyReported)","oldParameters":"(HttpStatusCode.AlreadyReported)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300Ambiguous)","oldParameters":"(HttpStatusCode.Ambiguous)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status502BadGateway)","oldParameters":"(HttpStatusCode.BadGateway)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status400BadRequest)","oldParameters":"(HttpStatusCode.BadRequest)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status409Conflict)","oldParameters":"(HttpStatusCode.Conflict)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status100Continue)","oldParameters":"(HttpStatusCode.Continue)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status201Created)","oldParameters":"(HttpStatusCode.Created)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status103EarlyHints)","oldParameters":"(HttpStatusCode.EarlyHints)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status417ExpectationFailed)","oldParameters":"(HttpStatusCode.ExpectationFailed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status424FailedDependency)","oldParameters":"(HttpStatusCode.FailedDependency)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status403Forbidden)","oldParameters":"(HttpStatusCode.Forbidden)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Found)","oldParameters":"(HttpStatusCode.Found)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status504GatewayTimeout)","oldParameters":"(HttpStatusCode.GatewayTimeout)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status410Gone)","oldParameters":"(HttpStatusCode.Gone)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status505HttpVersionNotSupported)","oldParameters":"(HttpStatusCode.HttpVersionNotSupported)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status226IMUsed)","oldParameters":"(HttpStatusCode.IMUsed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status507InsufficientStorage)","oldParameters":"(HttpStatusCode.InsufficientStorage)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status500InternalServerError)","oldParameters":"(HttpStatusCode.InternalServerError)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status411LengthRequired)","oldParameters":"(HttpStatusCode.LengthRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status423Locked)","oldParameters":"(HttpStatusCode.Locked)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status508LoopDetected)","oldParameters":"(HttpStatusCode.LoopDetected)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status405MethodNotAllowed)","oldParameters":"(HttpStatusCode.MethodNotAllowed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status421MisdirectedRequest)","oldParameters":"(HttpStatusCode.MisdirectedRequest)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301Moved)","oldParameters":"(HttpStatusCode.Moved)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301MovedPermanently)","oldParameters":"(HttpStatusCode.MovedPermanently)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300MultipleChoices)","oldParameters":"(HttpStatusCode.MultipleChoices)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status207MultiStatus)","oldParameters":"(HttpStatusCode.MultiStatus)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status511NetworkAuthenticationRequired)","oldParameters":"(HttpStatusCode.NetworkAuthenticationRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status204NoContent)","oldParameters":"(HttpStatusCode.NoContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status203NonAuthoritativeInformation)","oldParameters":"(HttpStatusCode.NonAuthoritativeInformation)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status406NotAcceptable)","oldParameters":"(HttpStatusCode.NotAcceptable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status510NotExtended)","oldParameters":"(HttpStatusCode.NotExtended)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status404NotFound)","oldParameters":"(HttpStatusCode.NotFound)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status501NotImplemented)","oldParameters":"(HttpStatusCode.NotImplemented)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status304NotModified)","oldParameters":"(HttpStatusCode.NotModified)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status200OK)","oldParameters":"(HttpStatusCode.OK)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status206PartialContent)","oldParameters":"(HttpStatusCode.PartialContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status402PaymentRequired)","oldParameters":"(HttpStatusCode.PaymentRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status308PermanentRedirect)","oldParameters":"(HttpStatusCode.PermanentRedirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status412PreconditionFailed)","oldParameters":"(HttpStatusCode.PreconditionFailed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status428PreconditionRequired)","oldParameters":"(HttpStatusCode.PreconditionRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status102Processing)","oldParameters":"(HttpStatusCode.Processing)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status407ProxyAuthenticationRequired)","oldParameters":"(HttpStatusCode.ProxyAuthenticationRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Redirect)","oldParameters":"(HttpStatusCode.Redirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307RedirectKeepVerb)","oldParameters":"(HttpStatusCode.RedirectKeepVerb)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303RedirectMethod)","oldParameters":"(HttpStatusCode.RedirectMethod)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status416RequestedRangeNotSatisfiable)","oldParameters":"(HttpStatusCode.RequestedRangeNotSatisfiable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status413RequestEntityTooLarge)","oldParameters":"(HttpStatusCode.RequestEntityTooLarge)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status431RequestHeaderFieldsTooLarge)","oldParameters":"(HttpStatusCode.RequestHeaderFieldsTooLarge)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status408RequestTimeout)","oldParameters":"(HttpStatusCode.RequestTimeout)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status414RequestUriTooLong)","oldParameters":"(HttpStatusCode.RequestUriTooLong)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status205ResetContent)","oldParameters":"(HttpStatusCode.ResetContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303SeeOther)","oldParameters":"(HttpStatusCode.SeeOther)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status503ServiceUnavailable)","oldParameters":"(HttpStatusCode.ServiceUnavailable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status101SwitchingProtocols)","oldParameters":"(HttpStatusCode.SwitchingProtocols)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307TemporaryRedirect)","oldParameters":"(HttpStatusCode.TemporaryRedirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status429TooManyRequests)","oldParameters":"(HttpStatusCode.TooManyRequests)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status401Unauthorized)","oldParameters":"(HttpStatusCode.Unauthorized)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status451UnavailableForLegalReasons)","oldParameters":"(HttpStatusCode.UnavailableForLegalReasons)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableContent)","oldParameters":"(HttpStatusCode.UnprocessableContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableEntity)","oldParameters":"(HttpStatusCode.UnprocessableEntity)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status415UnsupportedMediaType)","oldParameters":"(HttpStatusCode.UnsupportedMediaType)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status306Unused)","oldParameters":"(HttpStatusCode.Unused)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status426UpgradeRequired)","oldParameters":"(HttpStatusCode.UpgradeRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status305UseProxy)","oldParameters":"(HttpStatusCode.UseProxy)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status506VariantAlsoNegotiates)","oldParameters":"(HttpStatusCode.VariantAlsoNegotiates)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Method
+Action Name: ReplaceMethodOnly
+Action Value: {"oldMethod":"HttpNotFound","newMethod":"NotFound"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Attribute
+Action Name: RemoveNamedIdentifierFromAttributeArguments
+Action Value: Include
+Times Run: 2
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Http
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc.ModelBinding
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Identifier
+Action Name: ReplaceIdentifier
+Action Value: ModelStateEntry
+Times Run: 0
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/BaseController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/HomeController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/DepartmentsController.cs
+---------------------------
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status202Accepted)","oldParameters":"(HttpStatusCode.Accepted)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status208AlreadyReported)","oldParameters":"(HttpStatusCode.AlreadyReported)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300Ambiguous)","oldParameters":"(HttpStatusCode.Ambiguous)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status502BadGateway)","oldParameters":"(HttpStatusCode.BadGateway)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status400BadRequest)","oldParameters":"(HttpStatusCode.BadRequest)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status409Conflict)","oldParameters":"(HttpStatusCode.Conflict)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status100Continue)","oldParameters":"(HttpStatusCode.Continue)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status201Created)","oldParameters":"(HttpStatusCode.Created)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status103EarlyHints)","oldParameters":"(HttpStatusCode.EarlyHints)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status417ExpectationFailed)","oldParameters":"(HttpStatusCode.ExpectationFailed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status424FailedDependency)","oldParameters":"(HttpStatusCode.FailedDependency)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status403Forbidden)","oldParameters":"(HttpStatusCode.Forbidden)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Found)","oldParameters":"(HttpStatusCode.Found)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status504GatewayTimeout)","oldParameters":"(HttpStatusCode.GatewayTimeout)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status410Gone)","oldParameters":"(HttpStatusCode.Gone)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status505HttpVersionNotSupported)","oldParameters":"(HttpStatusCode.HttpVersionNotSupported)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status226IMUsed)","oldParameters":"(HttpStatusCode.IMUsed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status507InsufficientStorage)","oldParameters":"(HttpStatusCode.InsufficientStorage)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status500InternalServerError)","oldParameters":"(HttpStatusCode.InternalServerError)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status411LengthRequired)","oldParameters":"(HttpStatusCode.LengthRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status423Locked)","oldParameters":"(HttpStatusCode.Locked)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status508LoopDetected)","oldParameters":"(HttpStatusCode.LoopDetected)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status405MethodNotAllowed)","oldParameters":"(HttpStatusCode.MethodNotAllowed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status421MisdirectedRequest)","oldParameters":"(HttpStatusCode.MisdirectedRequest)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301Moved)","oldParameters":"(HttpStatusCode.Moved)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301MovedPermanently)","oldParameters":"(HttpStatusCode.MovedPermanently)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300MultipleChoices)","oldParameters":"(HttpStatusCode.MultipleChoices)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status207MultiStatus)","oldParameters":"(HttpStatusCode.MultiStatus)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status511NetworkAuthenticationRequired)","oldParameters":"(HttpStatusCode.NetworkAuthenticationRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status204NoContent)","oldParameters":"(HttpStatusCode.NoContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status203NonAuthoritativeInformation)","oldParameters":"(HttpStatusCode.NonAuthoritativeInformation)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status406NotAcceptable)","oldParameters":"(HttpStatusCode.NotAcceptable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status510NotExtended)","oldParameters":"(HttpStatusCode.NotExtended)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status404NotFound)","oldParameters":"(HttpStatusCode.NotFound)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status501NotImplemented)","oldParameters":"(HttpStatusCode.NotImplemented)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status304NotModified)","oldParameters":"(HttpStatusCode.NotModified)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status200OK)","oldParameters":"(HttpStatusCode.OK)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status206PartialContent)","oldParameters":"(HttpStatusCode.PartialContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status402PaymentRequired)","oldParameters":"(HttpStatusCode.PaymentRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status308PermanentRedirect)","oldParameters":"(HttpStatusCode.PermanentRedirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status412PreconditionFailed)","oldParameters":"(HttpStatusCode.PreconditionFailed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status428PreconditionRequired)","oldParameters":"(HttpStatusCode.PreconditionRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status102Processing)","oldParameters":"(HttpStatusCode.Processing)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status407ProxyAuthenticationRequired)","oldParameters":"(HttpStatusCode.ProxyAuthenticationRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Redirect)","oldParameters":"(HttpStatusCode.Redirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307RedirectKeepVerb)","oldParameters":"(HttpStatusCode.RedirectKeepVerb)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303RedirectMethod)","oldParameters":"(HttpStatusCode.RedirectMethod)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status416RequestedRangeNotSatisfiable)","oldParameters":"(HttpStatusCode.RequestedRangeNotSatisfiable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status413RequestEntityTooLarge)","oldParameters":"(HttpStatusCode.RequestEntityTooLarge)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status431RequestHeaderFieldsTooLarge)","oldParameters":"(HttpStatusCode.RequestHeaderFieldsTooLarge)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status408RequestTimeout)","oldParameters":"(HttpStatusCode.RequestTimeout)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status414RequestUriTooLong)","oldParameters":"(HttpStatusCode.RequestUriTooLong)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status205ResetContent)","oldParameters":"(HttpStatusCode.ResetContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303SeeOther)","oldParameters":"(HttpStatusCode.SeeOther)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status503ServiceUnavailable)","oldParameters":"(HttpStatusCode.ServiceUnavailable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status101SwitchingProtocols)","oldParameters":"(HttpStatusCode.SwitchingProtocols)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307TemporaryRedirect)","oldParameters":"(HttpStatusCode.TemporaryRedirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status429TooManyRequests)","oldParameters":"(HttpStatusCode.TooManyRequests)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status401Unauthorized)","oldParameters":"(HttpStatusCode.Unauthorized)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status451UnavailableForLegalReasons)","oldParameters":"(HttpStatusCode.UnavailableForLegalReasons)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableContent)","oldParameters":"(HttpStatusCode.UnprocessableContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableEntity)","oldParameters":"(HttpStatusCode.UnprocessableEntity)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status415UnsupportedMediaType)","oldParameters":"(HttpStatusCode.UnsupportedMediaType)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status306Unused)","oldParameters":"(HttpStatusCode.Unused)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status426UpgradeRequired)","oldParameters":"(HttpStatusCode.UpgradeRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status305UseProxy)","oldParameters":"(HttpStatusCode.UseProxy)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status506VariantAlsoNegotiates)","oldParameters":"(HttpStatusCode.VariantAlsoNegotiates)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Method
+Action Name: ReplaceMethodOnly
+Action Value: {"oldMethod":"HttpNotFound","newMethod":"NotFound"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Attribute
+Action Name: RemoveNamedIdentifierFromAttributeArguments
+Action Value: Include
+Times Run: 2
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Http
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc.Rendering
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc.ModelBinding
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Identifier
+Action Name: ReplaceIdentifier
+Action Value: ModelStateEntry
+Times Run: 0
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/App_Start/RouteConfig.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Routing
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Routing
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/NotificationsController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+
+----------------------
+Showing results for: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/ContosoUniversity.csproj
+----------------------
+---------------------------
+Target Versions:
+---------------------------
+net8.0
+---------------------------
+Source Versions:
+---------------------------
+net48
+---------------------------
+Upgrade packages:
+---------------------------
+bootstrap,->5.3.3
+jQuery,->3.7.1
+jQuery.Validation,->1.21.0
+Microsoft.jQuery.Unobtrusive.Validation,->4.0.0
+NETStandard.Library,->2.0.3
+Microsoft.Bcl.AsyncInterfaces,->9.0.9
+Microsoft.Bcl.HashCode,->6.0.0
+Microsoft.Data.SqlClient,->6.1.2
+Microsoft.Data.SqlClient.SNI.runtime,->5.1.0
+Microsoft.Identity.Client,->4.78.0
+Microsoft.EntityFrameworkCore,->9.0.10
+Microsoft.EntityFrameworkCore.Abstractions,->9.0.9
+Microsoft.EntityFrameworkCore.Analyzers,->8.0.21
+Microsoft.EntityFrameworkCore.Relational,->9.0.9
+Microsoft.EntityFrameworkCore.SqlServer,->9.0.9
+Microsoft.EntityFrameworkCore.Tools,->8.0.20
+Microsoft.Extensions.Caching.Abstractions,->9.0.9
+Microsoft.Extensions.Caching.Memory,->10.0.0
+Microsoft.Extensions.Configuration,->9.0.10
+Microsoft.Extensions.Configuration.Abstractions,->9.0.10
+Microsoft.Extensions.Configuration.Binder,->9.0.9
+Microsoft.Extensions.DependencyInjection,->9.0.10
+Microsoft.Extensions.DependencyInjection.Abstractions,->9.0.10
+Microsoft.Extensions.Logging,->9.0.10
+Microsoft.Extensions.Logging.Abstractions,->9.0.9
+Microsoft.Extensions.Options,->10.0.0
+Microsoft.Extensions.Primitives,->9.0.9
+Modernizr,->2.8.3
+Newtonsoft.Json,->13.0.4
+System.Buffers,->4.6.1
+System.Collections.Immutable,->9.0.9
+System.ComponentModel.Annotations,->5.0.0
+System.Diagnostics.DiagnosticSource,->9.0.9
+System.Memory,->4.6.3
+System.Numerics.Vectors,->4.6.1
+System.Runtime.CompilerServices.Unsafe,->6.1.2
+System.Threading.Tasks.Extensions,->4.6.3
+---------------------------
+Action packages:
+---------------------------
+System.Configuration.ConfigurationManager,*
+Microsoft.AspNetCore.SystemWebAdapters,1.4.0
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/InstructorsController.cs
+---------------------------
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status202Accepted)","oldParameters":"(HttpStatusCode.Accepted)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status208AlreadyReported)","oldParameters":"(HttpStatusCode.AlreadyReported)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300Ambiguous)","oldParameters":"(HttpStatusCode.Ambiguous)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status502BadGateway)","oldParameters":"(HttpStatusCode.BadGateway)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status400BadRequest)","oldParameters":"(HttpStatusCode.BadRequest)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status409Conflict)","oldParameters":"(HttpStatusCode.Conflict)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status100Continue)","oldParameters":"(HttpStatusCode.Continue)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status201Created)","oldParameters":"(HttpStatusCode.Created)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status103EarlyHints)","oldParameters":"(HttpStatusCode.EarlyHints)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status417ExpectationFailed)","oldParameters":"(HttpStatusCode.ExpectationFailed)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status424FailedDependency)","oldParameters":"(HttpStatusCode.FailedDependency)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status403Forbidden)","oldParameters":"(HttpStatusCode.Forbidden)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Found)","oldParameters":"(HttpStatusCode.Found)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status504GatewayTimeout)","oldParameters":"(HttpStatusCode.GatewayTimeout)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status410Gone)","oldParameters":"(HttpStatusCode.Gone)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status505HttpVersionNotSupported)","oldParameters":"(HttpStatusCode.HttpVersionNotSupported)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status226IMUsed)","oldParameters":"(HttpStatusCode.IMUsed)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status507InsufficientStorage)","oldParameters":"(HttpStatusCode.InsufficientStorage)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status500InternalServerError)","oldParameters":"(HttpStatusCode.InternalServerError)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status411LengthRequired)","oldParameters":"(HttpStatusCode.LengthRequired)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status423Locked)","oldParameters":"(HttpStatusCode.Locked)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status508LoopDetected)","oldParameters":"(HttpStatusCode.LoopDetected)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status405MethodNotAllowed)","oldParameters":"(HttpStatusCode.MethodNotAllowed)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status421MisdirectedRequest)","oldParameters":"(HttpStatusCode.MisdirectedRequest)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301Moved)","oldParameters":"(HttpStatusCode.Moved)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301MovedPermanently)","oldParameters":"(HttpStatusCode.MovedPermanently)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300MultipleChoices)","oldParameters":"(HttpStatusCode.MultipleChoices)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status207MultiStatus)","oldParameters":"(HttpStatusCode.MultiStatus)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status511NetworkAuthenticationRequired)","oldParameters":"(HttpStatusCode.NetworkAuthenticationRequired)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status204NoContent)","oldParameters":"(HttpStatusCode.NoContent)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status203NonAuthoritativeInformation)","oldParameters":"(HttpStatusCode.NonAuthoritativeInformation)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status406NotAcceptable)","oldParameters":"(HttpStatusCode.NotAcceptable)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status510NotExtended)","oldParameters":"(HttpStatusCode.NotExtended)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status404NotFound)","oldParameters":"(HttpStatusCode.NotFound)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status501NotImplemented)","oldParameters":"(HttpStatusCode.NotImplemented)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status304NotModified)","oldParameters":"(HttpStatusCode.NotModified)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status200OK)","oldParameters":"(HttpStatusCode.OK)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status206PartialContent)","oldParameters":"(HttpStatusCode.PartialContent)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status402PaymentRequired)","oldParameters":"(HttpStatusCode.PaymentRequired)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status308PermanentRedirect)","oldParameters":"(HttpStatusCode.PermanentRedirect)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status412PreconditionFailed)","oldParameters":"(HttpStatusCode.PreconditionFailed)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status428PreconditionRequired)","oldParameters":"(HttpStatusCode.PreconditionRequired)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status102Processing)","oldParameters":"(HttpStatusCode.Processing)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status407ProxyAuthenticationRequired)","oldParameters":"(HttpStatusCode.ProxyAuthenticationRequired)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Redirect)","oldParameters":"(HttpStatusCode.Redirect)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307RedirectKeepVerb)","oldParameters":"(HttpStatusCode.RedirectKeepVerb)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303RedirectMethod)","oldParameters":"(HttpStatusCode.RedirectMethod)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status416RequestedRangeNotSatisfiable)","oldParameters":"(HttpStatusCode.RequestedRangeNotSatisfiable)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status413RequestEntityTooLarge)","oldParameters":"(HttpStatusCode.RequestEntityTooLarge)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status431RequestHeaderFieldsTooLarge)","oldParameters":"(HttpStatusCode.RequestHeaderFieldsTooLarge)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status408RequestTimeout)","oldParameters":"(HttpStatusCode.RequestTimeout)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status414RequestUriTooLong)","oldParameters":"(HttpStatusCode.RequestUriTooLong)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status205ResetContent)","oldParameters":"(HttpStatusCode.ResetContent)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303SeeOther)","oldParameters":"(HttpStatusCode.SeeOther)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status503ServiceUnavailable)","oldParameters":"(HttpStatusCode.ServiceUnavailable)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status101SwitchingProtocols)","oldParameters":"(HttpStatusCode.SwitchingProtocols)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307TemporaryRedirect)","oldParameters":"(HttpStatusCode.TemporaryRedirect)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status429TooManyRequests)","oldParameters":"(HttpStatusCode.TooManyRequests)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status401Unauthorized)","oldParameters":"(HttpStatusCode.Unauthorized)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status451UnavailableForLegalReasons)","oldParameters":"(HttpStatusCode.UnavailableForLegalReasons)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableContent)","oldParameters":"(HttpStatusCode.UnprocessableContent)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableEntity)","oldParameters":"(HttpStatusCode.UnprocessableEntity)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status415UnsupportedMediaType)","oldParameters":"(HttpStatusCode.UnsupportedMediaType)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status306Unused)","oldParameters":"(HttpStatusCode.Unused)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status426UpgradeRequired)","oldParameters":"(HttpStatusCode.UpgradeRequired)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status305UseProxy)","oldParameters":"(HttpStatusCode.UseProxy)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status506VariantAlsoNegotiates)","oldParameters":"(HttpStatusCode.VariantAlsoNegotiates)"}
+Times Run: 4
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Method
+Action Name: ReplaceMethodOnly
+Action Value: {"oldMethod":"HttpNotFound","newMethod":"NotFound"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Attribute
+Action Name: RemoveNamedIdentifierFromAttributeArguments
+Action Value: Include
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Method
+Action Name: ReplaceMethodOnly
+Action Value: {"oldMethod":"TryUpdateModel","newMethod":"TryUpdateModelAsync"}
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Method
+Action Name: AddComment
+Action Value: {"comment":"Thisupdatedmethodmightrequiretheparameterstobere-organized","dontUseCTAPrefix":""}
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Http
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc.ModelBinding
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Identifier
+Action Name: ReplaceIdentifier
+Action Value: ModelStateEntry
+Times Run: 0
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Services/NotificationService.cs
+---------------------------
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/App_Start/FilterConfig.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/CoursesController.cs
+---------------------------
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status202Accepted)","oldParameters":"(HttpStatusCode.Accepted)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status208AlreadyReported)","oldParameters":"(HttpStatusCode.AlreadyReported)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300Ambiguous)","oldParameters":"(HttpStatusCode.Ambiguous)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status502BadGateway)","oldParameters":"(HttpStatusCode.BadGateway)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status400BadRequest)","oldParameters":"(HttpStatusCode.BadRequest)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status409Conflict)","oldParameters":"(HttpStatusCode.Conflict)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status100Continue)","oldParameters":"(HttpStatusCode.Continue)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status201Created)","oldParameters":"(HttpStatusCode.Created)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status103EarlyHints)","oldParameters":"(HttpStatusCode.EarlyHints)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status417ExpectationFailed)","oldParameters":"(HttpStatusCode.ExpectationFailed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status424FailedDependency)","oldParameters":"(HttpStatusCode.FailedDependency)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status403Forbidden)","oldParameters":"(HttpStatusCode.Forbidden)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Found)","oldParameters":"(HttpStatusCode.Found)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status504GatewayTimeout)","oldParameters":"(HttpStatusCode.GatewayTimeout)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status410Gone)","oldParameters":"(HttpStatusCode.Gone)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status505HttpVersionNotSupported)","oldParameters":"(HttpStatusCode.HttpVersionNotSupported)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status226IMUsed)","oldParameters":"(HttpStatusCode.IMUsed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status507InsufficientStorage)","oldParameters":"(HttpStatusCode.InsufficientStorage)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status500InternalServerError)","oldParameters":"(HttpStatusCode.InternalServerError)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status411LengthRequired)","oldParameters":"(HttpStatusCode.LengthRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status423Locked)","oldParameters":"(HttpStatusCode.Locked)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status508LoopDetected)","oldParameters":"(HttpStatusCode.LoopDetected)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status405MethodNotAllowed)","oldParameters":"(HttpStatusCode.MethodNotAllowed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status421MisdirectedRequest)","oldParameters":"(HttpStatusCode.MisdirectedRequest)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301Moved)","oldParameters":"(HttpStatusCode.Moved)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301MovedPermanently)","oldParameters":"(HttpStatusCode.MovedPermanently)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300MultipleChoices)","oldParameters":"(HttpStatusCode.MultipleChoices)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status207MultiStatus)","oldParameters":"(HttpStatusCode.MultiStatus)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status511NetworkAuthenticationRequired)","oldParameters":"(HttpStatusCode.NetworkAuthenticationRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status204NoContent)","oldParameters":"(HttpStatusCode.NoContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status203NonAuthoritativeInformation)","oldParameters":"(HttpStatusCode.NonAuthoritativeInformation)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status406NotAcceptable)","oldParameters":"(HttpStatusCode.NotAcceptable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status510NotExtended)","oldParameters":"(HttpStatusCode.NotExtended)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status404NotFound)","oldParameters":"(HttpStatusCode.NotFound)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status501NotImplemented)","oldParameters":"(HttpStatusCode.NotImplemented)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status304NotModified)","oldParameters":"(HttpStatusCode.NotModified)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status200OK)","oldParameters":"(HttpStatusCode.OK)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status206PartialContent)","oldParameters":"(HttpStatusCode.PartialContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status402PaymentRequired)","oldParameters":"(HttpStatusCode.PaymentRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status308PermanentRedirect)","oldParameters":"(HttpStatusCode.PermanentRedirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status412PreconditionFailed)","oldParameters":"(HttpStatusCode.PreconditionFailed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status428PreconditionRequired)","oldParameters":"(HttpStatusCode.PreconditionRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status102Processing)","oldParameters":"(HttpStatusCode.Processing)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status407ProxyAuthenticationRequired)","oldParameters":"(HttpStatusCode.ProxyAuthenticationRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Redirect)","oldParameters":"(HttpStatusCode.Redirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307RedirectKeepVerb)","oldParameters":"(HttpStatusCode.RedirectKeepVerb)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303RedirectMethod)","oldParameters":"(HttpStatusCode.RedirectMethod)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status416RequestedRangeNotSatisfiable)","oldParameters":"(HttpStatusCode.RequestedRangeNotSatisfiable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status413RequestEntityTooLarge)","oldParameters":"(HttpStatusCode.RequestEntityTooLarge)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status431RequestHeaderFieldsTooLarge)","oldParameters":"(HttpStatusCode.RequestHeaderFieldsTooLarge)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status408RequestTimeout)","oldParameters":"(HttpStatusCode.RequestTimeout)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status414RequestUriTooLong)","oldParameters":"(HttpStatusCode.RequestUriTooLong)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status205ResetContent)","oldParameters":"(HttpStatusCode.ResetContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303SeeOther)","oldParameters":"(HttpStatusCode.SeeOther)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status503ServiceUnavailable)","oldParameters":"(HttpStatusCode.ServiceUnavailable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status101SwitchingProtocols)","oldParameters":"(HttpStatusCode.SwitchingProtocols)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307TemporaryRedirect)","oldParameters":"(HttpStatusCode.TemporaryRedirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status429TooManyRequests)","oldParameters":"(HttpStatusCode.TooManyRequests)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status401Unauthorized)","oldParameters":"(HttpStatusCode.Unauthorized)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status451UnavailableForLegalReasons)","oldParameters":"(HttpStatusCode.UnavailableForLegalReasons)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableContent)","oldParameters":"(HttpStatusCode.UnprocessableContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableEntity)","oldParameters":"(HttpStatusCode.UnprocessableEntity)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status415UnsupportedMediaType)","oldParameters":"(HttpStatusCode.UnsupportedMediaType)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status306Unused)","oldParameters":"(HttpStatusCode.Unused)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status426UpgradeRequired)","oldParameters":"(HttpStatusCode.UpgradeRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status305UseProxy)","oldParameters":"(HttpStatusCode.UseProxy)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status506VariantAlsoNegotiates)","oldParameters":"(HttpStatusCode.VariantAlsoNegotiates)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Method
+Action Name: ReplaceMethodOnly
+Action Value: {"oldMethod":"HttpNotFound","newMethod":"NotFound"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Attribute
+Action Name: RemoveNamedIdentifierFromAttributeArguments
+Action Value: Include
+Times Run: 2
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Http
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc.Rendering
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc.ModelBinding
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Identifier
+Action Name: ReplaceIdentifier
+Action Value: ModelStateEntry
+Times Run: 0
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: Project
+---------------------------
+
+Action Type: Project
+Action Name: ArchiveFiles
+Action Value: BundleConfig.cs,FilterConfig.cs,RouteConfig.cs,WebApiConfig.cs,global.asax.cs,global.asax,AssemblyInfo.cs,packages.config
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Project
+Action Name: CreateNet8FolderHierarchy
+Action Value: 
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Project
+Action Name: MigrateConfig
+Action Value: 
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ProjectFile
+Action Name: MigrateProjectFile
+Action Value: 
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Data/SchoolContextFactory.cs
+---------------------------
+
+Action Type: MemberAccess
+Action Name: RemoveMemberAccess
+Action Value: 
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/StudentsController.cs
+---------------------------
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status202Accepted)","oldParameters":"(HttpStatusCode.Accepted)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status208AlreadyReported)","oldParameters":"(HttpStatusCode.AlreadyReported)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300Ambiguous)","oldParameters":"(HttpStatusCode.Ambiguous)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status502BadGateway)","oldParameters":"(HttpStatusCode.BadGateway)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status400BadRequest)","oldParameters":"(HttpStatusCode.BadRequest)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status409Conflict)","oldParameters":"(HttpStatusCode.Conflict)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status100Continue)","oldParameters":"(HttpStatusCode.Continue)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status201Created)","oldParameters":"(HttpStatusCode.Created)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status103EarlyHints)","oldParameters":"(HttpStatusCode.EarlyHints)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status417ExpectationFailed)","oldParameters":"(HttpStatusCode.ExpectationFailed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status424FailedDependency)","oldParameters":"(HttpStatusCode.FailedDependency)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status403Forbidden)","oldParameters":"(HttpStatusCode.Forbidden)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Found)","oldParameters":"(HttpStatusCode.Found)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status504GatewayTimeout)","oldParameters":"(HttpStatusCode.GatewayTimeout)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status410Gone)","oldParameters":"(HttpStatusCode.Gone)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status505HttpVersionNotSupported)","oldParameters":"(HttpStatusCode.HttpVersionNotSupported)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status226IMUsed)","oldParameters":"(HttpStatusCode.IMUsed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status507InsufficientStorage)","oldParameters":"(HttpStatusCode.InsufficientStorage)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status500InternalServerError)","oldParameters":"(HttpStatusCode.InternalServerError)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status411LengthRequired)","oldParameters":"(HttpStatusCode.LengthRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status423Locked)","oldParameters":"(HttpStatusCode.Locked)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status508LoopDetected)","oldParameters":"(HttpStatusCode.LoopDetected)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status405MethodNotAllowed)","oldParameters":"(HttpStatusCode.MethodNotAllowed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status421MisdirectedRequest)","oldParameters":"(HttpStatusCode.MisdirectedRequest)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301Moved)","oldParameters":"(HttpStatusCode.Moved)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301MovedPermanently)","oldParameters":"(HttpStatusCode.MovedPermanently)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300MultipleChoices)","oldParameters":"(HttpStatusCode.MultipleChoices)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status207MultiStatus)","oldParameters":"(HttpStatusCode.MultiStatus)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status511NetworkAuthenticationRequired)","oldParameters":"(HttpStatusCode.NetworkAuthenticationRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status204NoContent)","oldParameters":"(HttpStatusCode.NoContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status203NonAuthoritativeInformation)","oldParameters":"(HttpStatusCode.NonAuthoritativeInformation)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status406NotAcceptable)","oldParameters":"(HttpStatusCode.NotAcceptable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status510NotExtended)","oldParameters":"(HttpStatusCode.NotExtended)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status404NotFound)","oldParameters":"(HttpStatusCode.NotFound)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status501NotImplemented)","oldParameters":"(HttpStatusCode.NotImplemented)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status304NotModified)","oldParameters":"(HttpStatusCode.NotModified)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status200OK)","oldParameters":"(HttpStatusCode.OK)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status206PartialContent)","oldParameters":"(HttpStatusCode.PartialContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status402PaymentRequired)","oldParameters":"(HttpStatusCode.PaymentRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status308PermanentRedirect)","oldParameters":"(HttpStatusCode.PermanentRedirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status412PreconditionFailed)","oldParameters":"(HttpStatusCode.PreconditionFailed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status428PreconditionRequired)","oldParameters":"(HttpStatusCode.PreconditionRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status102Processing)","oldParameters":"(HttpStatusCode.Processing)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status407ProxyAuthenticationRequired)","oldParameters":"(HttpStatusCode.ProxyAuthenticationRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Redirect)","oldParameters":"(HttpStatusCode.Redirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307RedirectKeepVerb)","oldParameters":"(HttpStatusCode.RedirectKeepVerb)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303RedirectMethod)","oldParameters":"(HttpStatusCode.RedirectMethod)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status416RequestedRangeNotSatisfiable)","oldParameters":"(HttpStatusCode.RequestedRangeNotSatisfiable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status413RequestEntityTooLarge)","oldParameters":"(HttpStatusCode.RequestEntityTooLarge)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status431RequestHeaderFieldsTooLarge)","oldParameters":"(HttpStatusCode.RequestHeaderFieldsTooLarge)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status408RequestTimeout)","oldParameters":"(HttpStatusCode.RequestTimeout)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status414RequestUriTooLong)","oldParameters":"(HttpStatusCode.RequestUriTooLong)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status205ResetContent)","oldParameters":"(HttpStatusCode.ResetContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303SeeOther)","oldParameters":"(HttpStatusCode.SeeOther)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status503ServiceUnavailable)","oldParameters":"(HttpStatusCode.ServiceUnavailable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status101SwitchingProtocols)","oldParameters":"(HttpStatusCode.SwitchingProtocols)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307TemporaryRedirect)","oldParameters":"(HttpStatusCode.TemporaryRedirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status429TooManyRequests)","oldParameters":"(HttpStatusCode.TooManyRequests)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status401Unauthorized)","oldParameters":"(HttpStatusCode.Unauthorized)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status451UnavailableForLegalReasons)","oldParameters":"(HttpStatusCode.UnavailableForLegalReasons)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableContent)","oldParameters":"(HttpStatusCode.UnprocessableContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableEntity)","oldParameters":"(HttpStatusCode.UnprocessableEntity)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status415UnsupportedMediaType)","oldParameters":"(HttpStatusCode.UnsupportedMediaType)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status306Unused)","oldParameters":"(HttpStatusCode.Unused)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status426UpgradeRequired)","oldParameters":"(HttpStatusCode.UpgradeRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status305UseProxy)","oldParameters":"(HttpStatusCode.UseProxy)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status506VariantAlsoNegotiates)","oldParameters":"(HttpStatusCode.VariantAlsoNegotiates)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Method
+Action Name: ReplaceMethodOnly
+Action Value: {"oldMethod":"HttpNotFound","newMethod":"NotFound"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Attribute
+Action Name: RemoveNamedIdentifierFromAttributeArguments
+Action Value: Include
+Times Run: 2
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Http
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc.ModelBinding
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Identifier
+Action Name: ReplaceIdentifier
+Action Value: ModelStateEntry
+Times Run: 0
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/BaseController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/HomeController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/DepartmentsController.cs
+---------------------------
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status202Accepted)","oldParameters":"(HttpStatusCode.Accepted)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status208AlreadyReported)","oldParameters":"(HttpStatusCode.AlreadyReported)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300Ambiguous)","oldParameters":"(HttpStatusCode.Ambiguous)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status502BadGateway)","oldParameters":"(HttpStatusCode.BadGateway)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status400BadRequest)","oldParameters":"(HttpStatusCode.BadRequest)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status409Conflict)","oldParameters":"(HttpStatusCode.Conflict)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status100Continue)","oldParameters":"(HttpStatusCode.Continue)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status201Created)","oldParameters":"(HttpStatusCode.Created)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status103EarlyHints)","oldParameters":"(HttpStatusCode.EarlyHints)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status417ExpectationFailed)","oldParameters":"(HttpStatusCode.ExpectationFailed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status424FailedDependency)","oldParameters":"(HttpStatusCode.FailedDependency)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status403Forbidden)","oldParameters":"(HttpStatusCode.Forbidden)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Found)","oldParameters":"(HttpStatusCode.Found)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status504GatewayTimeout)","oldParameters":"(HttpStatusCode.GatewayTimeout)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status410Gone)","oldParameters":"(HttpStatusCode.Gone)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status505HttpVersionNotSupported)","oldParameters":"(HttpStatusCode.HttpVersionNotSupported)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status226IMUsed)","oldParameters":"(HttpStatusCode.IMUsed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status507InsufficientStorage)","oldParameters":"(HttpStatusCode.InsufficientStorage)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status500InternalServerError)","oldParameters":"(HttpStatusCode.InternalServerError)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status411LengthRequired)","oldParameters":"(HttpStatusCode.LengthRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status423Locked)","oldParameters":"(HttpStatusCode.Locked)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status508LoopDetected)","oldParameters":"(HttpStatusCode.LoopDetected)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status405MethodNotAllowed)","oldParameters":"(HttpStatusCode.MethodNotAllowed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status421MisdirectedRequest)","oldParameters":"(HttpStatusCode.MisdirectedRequest)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301Moved)","oldParameters":"(HttpStatusCode.Moved)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status301MovedPermanently)","oldParameters":"(HttpStatusCode.MovedPermanently)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status300MultipleChoices)","oldParameters":"(HttpStatusCode.MultipleChoices)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status207MultiStatus)","oldParameters":"(HttpStatusCode.MultiStatus)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status511NetworkAuthenticationRequired)","oldParameters":"(HttpStatusCode.NetworkAuthenticationRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status204NoContent)","oldParameters":"(HttpStatusCode.NoContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status203NonAuthoritativeInformation)","oldParameters":"(HttpStatusCode.NonAuthoritativeInformation)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status406NotAcceptable)","oldParameters":"(HttpStatusCode.NotAcceptable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status510NotExtended)","oldParameters":"(HttpStatusCode.NotExtended)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status404NotFound)","oldParameters":"(HttpStatusCode.NotFound)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status501NotImplemented)","oldParameters":"(HttpStatusCode.NotImplemented)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status304NotModified)","oldParameters":"(HttpStatusCode.NotModified)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status200OK)","oldParameters":"(HttpStatusCode.OK)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status206PartialContent)","oldParameters":"(HttpStatusCode.PartialContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status402PaymentRequired)","oldParameters":"(HttpStatusCode.PaymentRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status308PermanentRedirect)","oldParameters":"(HttpStatusCode.PermanentRedirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status412PreconditionFailed)","oldParameters":"(HttpStatusCode.PreconditionFailed)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status428PreconditionRequired)","oldParameters":"(HttpStatusCode.PreconditionRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status102Processing)","oldParameters":"(HttpStatusCode.Processing)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status407ProxyAuthenticationRequired)","oldParameters":"(HttpStatusCode.ProxyAuthenticationRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status302Redirect)","oldParameters":"(HttpStatusCode.Redirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307RedirectKeepVerb)","oldParameters":"(HttpStatusCode.RedirectKeepVerb)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303RedirectMethod)","oldParameters":"(HttpStatusCode.RedirectMethod)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status416RequestedRangeNotSatisfiable)","oldParameters":"(HttpStatusCode.RequestedRangeNotSatisfiable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status413RequestEntityTooLarge)","oldParameters":"(HttpStatusCode.RequestEntityTooLarge)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status431RequestHeaderFieldsTooLarge)","oldParameters":"(HttpStatusCode.RequestHeaderFieldsTooLarge)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status408RequestTimeout)","oldParameters":"(HttpStatusCode.RequestTimeout)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status414RequestUriTooLong)","oldParameters":"(HttpStatusCode.RequestUriTooLong)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status205ResetContent)","oldParameters":"(HttpStatusCode.ResetContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status303SeeOther)","oldParameters":"(HttpStatusCode.SeeOther)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status503ServiceUnavailable)","oldParameters":"(HttpStatusCode.ServiceUnavailable)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status101SwitchingProtocols)","oldParameters":"(HttpStatusCode.SwitchingProtocols)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status307TemporaryRedirect)","oldParameters":"(HttpStatusCode.TemporaryRedirect)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status429TooManyRequests)","oldParameters":"(HttpStatusCode.TooManyRequests)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status401Unauthorized)","oldParameters":"(HttpStatusCode.Unauthorized)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status451UnavailableForLegalReasons)","oldParameters":"(HttpStatusCode.UnavailableForLegalReasons)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableContent)","oldParameters":"(HttpStatusCode.UnprocessableContent)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status422UnprocessableEntity)","oldParameters":"(HttpStatusCode.UnprocessableEntity)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status415UnsupportedMediaType)","oldParameters":"(HttpStatusCode.UnsupportedMediaType)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status306Unused)","oldParameters":"(HttpStatusCode.Unused)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status426UpgradeRequired)","oldParameters":"(HttpStatusCode.UpgradeRequired)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status305UseProxy)","oldParameters":"(HttpStatusCode.UseProxy)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ObjectCreation
+Action Name: ReplaceObjectInitializationWithParams
+Action Value: {"newExpression":"newStatusCodeResult()","newParameters":"(StatusCodes.Status506VariantAlsoNegotiates)","oldParameters":"(HttpStatusCode.VariantAlsoNegotiates)"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Method
+Action Name: ReplaceMethodOnly
+Action Value: {"oldMethod":"HttpNotFound","newMethod":"NotFound"}
+Times Run: 3
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Attribute
+Action Name: RemoveNamedIdentifierFromAttributeArguments
+Action Value: Include
+Times Run: 2
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Http
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc.Rendering
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc.ModelBinding
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Identifier
+Action Name: ReplaceIdentifier
+Action Value: ModelStateEntry
+Times Run: 0
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/App_Start/RouteConfig.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Routing
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Routing
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/ContosoUniversity/Controllers/NotificationsController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+
+
+===========
+BuildErrors
+===========
+
+
