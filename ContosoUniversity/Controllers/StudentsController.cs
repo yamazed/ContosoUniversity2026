@@ -2,15 +2,25 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Net;
-using System.Web.Mvc;
 using ContosoUniversity.Data;
 using ContosoUniversity.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+
+using Microsoft.AspNetCore.Http;
+
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.Configuration;
+
 
 namespace ContosoUniversity.Controllers
 {
     public class StudentsController : BaseController
     {
+        public StudentsController(IConfiguration configuration) : base(configuration)
+        {
+        }
+
         // GET: Students - Admins and Teachers can view
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
@@ -31,13 +41,13 @@ namespace ContosoUniversity.Controllers
 
             var students = from s in db.Students
                            select s;
-            
+
             if (!String.IsNullOrEmpty(searchString))
             {
                 students = students.Where(s => s.LastName.Contains(searchString)
                                        || s.FirstMidName.Contains(searchString));
             }
-            
+
             switch (sortOrder)
             {
                 case "name_desc":
@@ -64,7 +74,7 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new StatusCodeResult(StatusCodes.Status400BadRequest);
             }
             Student student = db.Students
                 .Include(s => s.Enrollments)
@@ -72,7 +82,7 @@ namespace ContosoUniversity.Controllers
                 .Where(s => s.ID == id).Single();
             if (student == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             return View(student);
         }
@@ -90,7 +100,7 @@ namespace ContosoUniversity.Controllers
         // POST: Students/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LastName,FirstMidName,EnrollmentDate")] Student student)
+        public ActionResult Create([Bind("LastName,FirstMidName,EnrollmentDate")] Student student)
         {
             try
             {
@@ -110,11 +120,11 @@ namespace ContosoUniversity.Controllers
                 {
                     db.Students.Add(student);
                     db.SaveChanges();
-                    
+
                     // Send notification for student creation
                     var studentName = $"{student.FirstMidName} {student.LastName}";
                     SendEntityNotification("Student", student.ID.ToString(), studentName, EntityOperation.CREATE);
-                    
+
                     return RedirectToAction("Index");
                 }
             }
@@ -131,12 +141,12 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new StatusCodeResult(StatusCodes.Status400BadRequest);
             }
             Student student = db.Students.Find(id);
             if (student == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             return View(student);
         }
@@ -144,7 +154,7 @@ namespace ContosoUniversity.Controllers
         // POST: Students/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,LastName,FirstMidName,EnrollmentDate")] Student student)
+        public ActionResult Edit([Bind("ID,LastName,FirstMidName,EnrollmentDate")] Student student)
         {
             try
             {
@@ -164,11 +174,11 @@ namespace ContosoUniversity.Controllers
                 {
                     db.Entry(student).State = EntityState.Modified;
                     db.SaveChanges();
-                    
+
                     // Send notification for student update
                     var studentName = $"{student.FirstMidName} {student.LastName}";
                     SendEntityNotification("Student", student.ID.ToString(), studentName, EntityOperation.UPDATE);
-                    
+
                     return RedirectToAction("Index");
                 }
             }
@@ -185,12 +195,12 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new StatusCodeResult(StatusCodes.Status400BadRequest);
             }
             Student student = db.Students.Find(id);
             if (student == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             return View(student);
         }
@@ -206,10 +216,10 @@ namespace ContosoUniversity.Controllers
                 var studentName = $"{student.FirstMidName} {student.LastName}";
                 db.Students.Remove(student);
                 db.SaveChanges();
-                
+
                 // Send notification for student deletion
                 SendEntityNotification("Student", id.ToString(), studentName, EntityOperation.DELETE);
-                
+
                 return RedirectToAction("Index");
             }
             catch (Exception ex)

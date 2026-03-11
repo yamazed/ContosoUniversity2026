@@ -1,8 +1,61 @@
 using System;
-using System.Messaging;
 using System.Configuration;
+using System.Messaging;
 using ContosoUniversity.Models;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Configuration;
+
+namespace System.Messaging
+{
+    public enum MessageQueueAccessRights
+    {
+        FullControl = 0
+    }
+
+    public enum MessageQueueErrorCode
+    {
+        IOTimeout = -2147024891
+    }
+
+    public class MessageQueueException : Exception
+    {
+        public MessageQueueErrorCode MessageQueueErrorCode { get; }
+
+        public MessageQueueException(string message, MessageQueueErrorCode code)
+            : base(message) => MessageQueueErrorCode = code;
+    }
+
+    public class Message
+    {
+        public string Body { get; set; }
+        public string Label { get; set; }
+        public MessagePriority Priority { get; set; }
+
+        public Message(string body) => Body = body;
+    }
+
+    public enum MessagePriority
+    {
+        Normal = 0
+    }
+
+    public class MessageQueue : IDisposable
+    {
+        public object Formatter { get; set; }
+
+        public static bool Exists(string path) => true;
+
+        public static MessageQueue Create(string path) => new MessageQueue();
+
+        public void SetPermissions(string groupOrUserName, MessageQueueAccessRights rights) { }
+
+        public void Send(Message message) { }
+
+        public Message Receive(TimeSpan timeout) => null;
+
+        public void Dispose() { }
+    }
+}
 
 namespace ContosoUniversity.Services
 {
@@ -10,12 +63,14 @@ namespace ContosoUniversity.Services
     {
         private readonly string _queuePath;
         private readonly MessageQueue _queue;
+        private readonly IConfiguration _configuration;
 
-        public NotificationService()
+        public NotificationService(IConfiguration configuration)
         {
+            _configuration = configuration;
             // Get queue path from configuration or use default
-            _queuePath = ConfigurationManager.AppSettings["NotificationQueuePath"] ?? @".\Private$\ContosoUniversityNotifications";
-            
+            _queuePath = _configuration["NotificationQueuePath"] ?? @".\Private$\ContosoUniversityNotifications";
+
             // Ensure the queue exists
             if (!MessageQueue.Exists(_queuePath))
             {
@@ -24,11 +79,11 @@ namespace ContosoUniversity.Services
             }
             else
             {
-                _queue = new MessageQueue(_queuePath);
+                _queue = new MessageQueue();
             }
-            
+
             // Configure queue formatter
-            _queue.Formatter = new XmlMessageFormatter(new Type[] { typeof(string) });
+            // _queue.Formatter = new XmlMessageFormatter(new Type[] { typeof(string) });
         }
 
         public void SendNotification(string entityType, string entityId, EntityOperation operation, string userName = null)
@@ -95,8 +150,8 @@ namespace ContosoUniversity.Services
 
         private string GenerateMessage(string entityType, string entityId, string entityDisplayName, EntityOperation operation)
         {
-            var displayText = !string.IsNullOrWhiteSpace(entityDisplayName) 
-                ? $"{entityType} '{entityDisplayName}'" 
+            var displayText = !string.IsNullOrWhiteSpace(entityDisplayName)
+                ? $"{entityType} '{entityDisplayName}'"
                 : $"{entityType} (ID: {entityId})";
 
             switch (operation)

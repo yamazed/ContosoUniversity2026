@@ -1,19 +1,25 @@
 using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
 using ContosoUniversity.Services;
 using ContosoUniversity.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+
 
 namespace ContosoUniversity.Controllers
 {
     public class NotificationsController : BaseController
     {
+        public NotificationsController(IConfiguration configuration) : base(configuration)
+        {
+        }
+
         // GET: api/notifications - Get pending notifications for admin
         [HttpGet]
         public JsonResult GetNotifications()
         {
             var notifications = new List<Notification>();
-            
+
             try
             {
                 // Read all available notifications from the queue
@@ -21,7 +27,7 @@ namespace ContosoUniversity.Controllers
                 while ((notification = notificationService.ReceiveNotification()) != null)
                 {
                     notifications.Add(notification);
-                    
+
                     // Limit to prevent overwhelming the UI
                     if (notifications.Count >= 10)
                         break;
@@ -30,14 +36,14 @@ namespace ContosoUniversity.Controllers
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Error retrieving notifications: {ex.Message}");
-                return Json(new { success = false, message = "Error retrieving notifications" }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = false, message = "Error retrieving notifications" });
             }
 
-            return Json(new { 
-                success = true, 
+            return Json(new {
+                success = true,
                 notifications = notifications,
-                count = notifications.Count 
-            }, JsonRequestBehavior.AllowGet);
+                count = notifications.Count
+            });
         }
 
         // POST: api/notifications/mark-read

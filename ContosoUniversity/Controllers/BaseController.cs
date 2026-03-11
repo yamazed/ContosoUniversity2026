@@ -1,19 +1,22 @@
 using System;
-using System.Web.Mvc;
 using ContosoUniversity.Services;
 using ContosoUniversity.Models;
 using ContosoUniversity.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+
 
 namespace ContosoUniversity.Controllers
 {
     public abstract class BaseController : Controller
     {
         protected SchoolContext db;
-        protected NotificationService notificationService = new NotificationService();
+        protected NotificationService notificationService;
 
-        public BaseController()
+        public BaseController(IConfiguration configuration)
         {
-            db = SchoolContextFactory.Create();
+            db = SchoolContextFactory.Create(configuration);
+            notificationService = new NotificationService(configuration);
         }
 
         protected void SendEntityNotification(string entityType, string entityId, EntityOperation operation)
