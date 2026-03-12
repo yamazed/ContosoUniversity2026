@@ -11,25 +11,25 @@ namespace NotificationAPI.Models
         
         [Required]
         [StringLength(100)]
-        public string EntityType { get; set; }
+        public required string EntityType { get; set; }
         
         [Required]
         [StringLength(50)]
-        public string EntityId { get; set; }
+        public required string EntityId { get; set; }
         
         [Required]
         [StringLength(20)]
-        public string Operation { get; set; } // CREATE, UPDATE, DELETE
+        public required string Operation { get; set; } // CREATE, UPDATE, DELETE
         
         [Required]
         [StringLength(256)]
-        public string Message { get; set; }
+        public required string Message { get; set; }
         
         [Required]
         public DateTime CreatedAt { get; set; }
         
         [StringLength(100)]
-        public string CreatedBy { get; set; }
+        public required string CreatedBy { get; set; }
         
         public bool IsRead { get; set; }
         

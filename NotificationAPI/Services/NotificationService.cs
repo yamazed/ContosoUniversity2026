@@ -16,9 +16,9 @@ namespace NotificationAPI.Services
         private readonly AmazonSQSClient _sqsClient;
         private readonly string _queueUrl;
         private readonly string _queueName;
-        private readonly ILogger<NotificationService> _logger;
+        private readonly ILogger<NotificationService>? _logger;
 
-        public NotificationService(IConfiguration configuration, ILogger<NotificationService> logger = null)
+        public NotificationService(IConfiguration configuration, ILogger<NotificationService>? logger = null)
         {
             _logger = logger;
             
@@ -27,18 +27,11 @@ namespace NotificationAPI.Services
 
             // Read AWS configuration
             var region = configuration["AWS:Region"];
-            _queueUrl = configuration["AWS:SQS:QueueUrl"];
+            _queueUrl = configuration["AWS:SQS:QueueUrl"] ?? throw new InvalidOperationException("AWS:SQS:QueueUrl configuration is missing");
 
             if (string.IsNullOrEmpty(region))
             {
                 var errorMsg = "AWS:Region configuration is missing";
-                _logger?.LogError(errorMsg);
-                throw new InvalidOperationException(errorMsg);
-            }
-
-            if (string.IsNullOrEmpty(_queueUrl))
-            {
-                var errorMsg = "AWS:SQS:QueueUrl configuration is missing";
                 _logger?.LogError(errorMsg);
                 throw new InvalidOperationException(errorMsg);
             }
@@ -66,7 +59,7 @@ namespace NotificationAPI.Services
             SendNotification(entityType, entityId, null, operation, userName);
         }
 
-        public void SendNotification(string entityType, string entityId, string entityDisplayName, EntityOperation operation, string userName = null)
+        public void SendNotification(string entityType, string entityId, string? entityDisplayName, EntityOperation operation, string? userName = null)
         {
             try
             {
@@ -115,7 +108,7 @@ namespace NotificationAPI.Services
             }
         }
 
-        public Notification ReceiveNotification()
+        public Notification? ReceiveNotification()
         {
             try
             {
@@ -189,7 +182,7 @@ namespace NotificationAPI.Services
             // for persistence and tracking read status
         }
 
-        private string GenerateMessage(string entityType, string entityId, string entityDisplayName, EntityOperation operation)
+        private string GenerateMessage(string entityType, string entityId, string? entityDisplayName, EntityOperation operation)
         {
             var displayText = !string.IsNullOrWhiteSpace(entityDisplayName)
                 ? $"{entityType} '{entityDisplayName}'"
