@@ -12,16 +12,14 @@ namespace ContosoUniversityCdk
             var account = System.Environment.GetEnvironmentVariable("CDK_DEFAULT_ACCOUNT");
             var region = System.Environment.GetEnvironmentVariable("CDK_DEFAULT_REGION");
 
-            new ContosoUniversityStack(app, "ContosoUniversityStack", new ContosoUniversityStackProps
+            // Use simple stack (single EC2 instance, no load balancer)
+            new ContosoUniversityStackSimple(app, "ContosoUniversityStack", new StackProps
             {
                 Env = new Amazon.CDK.Environment
                 {
                     Account = account,
                     Region = region
-                },
-                EnvironmentName = app.Node.TryGetContext("environmentName")?.ToString() ?? "dev",
-                DatabaseMinCapacity = double.Parse(app.Node.TryGetContext("databaseMinCapacity")?.ToString() ?? "0.5"),
-                DatabaseMaxCapacity = double.Parse(app.Node.TryGetContext("databaseMaxCapacity")?.ToString() ?? "2.0")
+                }
             });
 
             app.Synth();

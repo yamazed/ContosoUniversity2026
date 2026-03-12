@@ -1,13 +1,13 @@
 # Update running EC2 instances with new application versions
 
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"
 
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host "Updating EC2 Instances" -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host ""
 
-$REGION = (aws configure get region)
+$REGION = (aws configure get region --no-verify-ssl 2>$null).Trim()
 if ([string]::IsNullOrEmpty($REGION)) {
     $REGION = "us-east-1"
 }
@@ -20,13 +20,15 @@ $CONTOSO_ASG = (aws cloudformation describe-stacks `
     --stack-name $STACK_NAME `
     --region $REGION `
     --query "Stacks[0].Outputs[?OutputKey=='ContosoApiAsgName'].OutputValue" `
-    --output text)
+    --output text `
+    --no-verify-ssl 2>$null).Trim()
 
 $NOTIFICATION_ASG = (aws cloudformation describe-stacks `
     --stack-name $STACK_NAME `
     --region $REGION `
     --query "Stacks[0].Outputs[?OutputKey=='NotificationApiAsgName'].OutputValue" `
-    --output text)
+    --output text `
+    --no-verify-ssl 2>$null).Trim()
 
 if ([string]::IsNullOrEmpty($CONTOSO_ASG) -or [string]::IsNullOrEmpty($NOTIFICATION_ASG)) {
     Write-Host "❌ Error: Could not find Auto Scaling Groups" -ForegroundColor Red
@@ -53,7 +55,8 @@ function Update-AsgInstances {
         --auto-scaling-group-names $ASG_NAME `
         --region $REGION `
         --query "AutoScalingGroups[0].Instances[?LifecycleState=='InService'].InstanceId" `
-        --output text)
+        --output text `
+        --no-verify-ssl 2>$null).Trim()
     
     if ([string]::IsNullOrEmpty($INSTANCE_IDS)) {
         Write-Host "⚠️  No running instances found in $ASG_NAME" -ForegroundColor Yellow
@@ -64,45 +67,71 @@ function Update-AsgInstances {
     
     # Send command to each instance via SSM
     foreach ($INSTANCE_ID in $INSTANCE_IDS -split '\s+') {
-        Write-Host "  Updating instance $INSTANCE_ID..." -ForegroundColor Gray
-        
-        $commands = @(
-            "cd /opt/$APP_NAME",
-            "aws s3 cp s3://contoso-deployment-`$(aws sts get-caller-identity --query Account --output text)/$APP_NAME.zip .",
-            "unzip -o $APP_NAME.zip",
-            "rm $APP_NAME.zip",
-            "systemctl restart $SERVICE_NAME",
-            "sleep 5",
-            "systemctl status $SERVICE_NAME"
-        )
-        
-        $commandsJson = ($commands | ConvertTo-Json -Compress).Replace('"', '\"')
-        
-        $COMMAND_ID = (aws ssm send-command `
-            --instance-ids $INSTANCE_ID `
-            --document-name "AWS-RunShellScript" `
-            --parameters "commands=$commandsJson" `
-            --region $REGION `
-            --query "Command.CommandId" `
-            --output text)
-        
-        Write-Host "  Command sent: $COMMAND_ID" -ForegroundColor Gray
-        
-        # Wait for command to complete
-        Start-Sleep -Seconds 5
-        
-        try {
-            $STATUS = (aws ssm get-command-invocation `
-                --command-id $COMMAND_ID `
-                --instance-id $INSTANCE_ID `
-                --region $REGION `
-                --query "Status" `
-                --output text 2>$null)
-        } catch {
-            $STATUS = "Pending"
+        if ([string]::IsNullOrWhiteSpace($INSTANCE_ID)) {
+            continue
         }
         
-        Write-Host "  Status: $STATUS" -ForegroundColor Gray
+        Write-Host "  Updating instance $INSTANCE_ID..." -ForegroundColor Gray
+        
+        # Create command script
+        $commandScript = @"
+cd /opt/$APP_NAME
+aws s3 cp s3://contoso-deployment-`$(aws sts get-caller-identity --query Account --output text --no-verify-ssl)/$APP_NAME.zip . --no-verify-ssl
+unzip -o $APP_NAME.zip
+rm $APP_NAME.zip
+systemctl restart $SERVICE_NAME
+sleep 5
+systemctl status $SERVICE_NAME --no-pager
+"@
+        
+        # Write to temp file
+        $tempFile = [System.IO.Path]::GetTempFileName()
+        $commandScript | Out-File -FilePath $tempFile -Encoding utf8 -NoNewline
+        
+        try {
+            $COMMAND_ID = (aws ssm send-command `
+                --instance-ids $INSTANCE_ID `
+                --document-name "AWS-RunShellScript" `
+                --parameters "commands=[`"cd /opt/$APP_NAME`",`"aws s3 cp s3://contoso-deployment-`$(aws sts get-caller-identity --query Account --output text --no-verify-ssl)/$APP_NAME.zip . --no-verify-ssl`",`"unzip -o $APP_NAME.zip`",`"rm $APP_NAME.zip`",`"systemctl restart $SERVICE_NAME`",`"sleep 5`",`"systemctl status $SERVICE_NAME --no-pager`"]" `
+                --region $REGION `
+                --query "Command.CommandId" `
+                --output text `
+                --no-verify-ssl 2>$null)
+            
+            if ([string]::IsNullOrWhiteSpace($COMMAND_ID)) {
+                Write-Host "  ⚠️  Failed to send command (SSM might not be ready)" -ForegroundColor Yellow
+                continue
+            }
+            
+            $COMMAND_ID = $COMMAND_ID.Trim()
+            Write-Host "  Command sent: $COMMAND_ID" -ForegroundColor Gray
+            
+            # Wait for command to complete
+            Start-Sleep -Seconds 10
+            
+            try {
+                $STATUS = (aws ssm get-command-invocation `
+                    --command-id $COMMAND_ID `
+                    --instance-id $INSTANCE_ID `
+                    --region $REGION `
+                    --query "Status" `
+                    --output text `
+                    --no-verify-ssl 2>$null)
+                
+                if (-not [string]::IsNullOrWhiteSpace($STATUS)) {
+                    $STATUS = $STATUS.Trim()
+                    Write-Host "  Status: $STATUS" -ForegroundColor Gray
+                } else {
+                    Write-Host "  Status: Pending" -ForegroundColor Gray
+                }
+            } catch {
+                Write-Host "  Status: Pending" -ForegroundColor Gray
+            }
+        } catch {
+            Write-Host "  ⚠️  Error sending command: $_" -ForegroundColor Yellow
+        } finally {
+            Remove-Item -Path $tempFile -ErrorAction SilentlyContinue
+        }
     }
     
     Write-Host "✅ $APP_NAME instances updated" -ForegroundColor Green

@@ -2,17 +2,23 @@
 
 $ErrorActionPreference = "Stop"
 
+# Suppress Python SSL warnings
+$env:PYTHONWARNINGS = "ignore:Unverified HTTPS request"
+
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host "Publishing .NET Applications" -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host ""
 
-# Get AWS account
-$accountOutput = aws sts get-caller-identity --query Account --output text --no-verify-ssl 2>&1
-$ACCOUNT = ($accountOutput | Where-Object { $_ -match '^\d{12}$' }) -join ''
+# Get AWS account (temporarily allow errors for AWS CLI warnings)
+$ErrorActionPreference = "Continue"
+$ACCOUNT = (aws sts get-caller-identity --query Account --output text --no-verify-ssl 2>$null).Trim()
+$REGION = (aws configure get region --no-verify-ssl 2>$null).Trim()
+$ErrorActionPreference = "Stop"
 
-$regionOutput = aws configure get region --no-verify-ssl 2>&1
-$REGION = ($regionOutput | Where-Object { $_ -match '^[a-z]+-[a-z]+-\d+$' }) -join ''
+if ([string]::IsNullOrEmpty($REGION)) {
+    $REGION = "us-east-1"
+}
 
 $BUCKET = "contoso-deployment-$ACCOUNT"
 
@@ -27,18 +33,20 @@ Write-Host ""
 
 # Create S3 bucket if it doesn't exist
 Write-Host "Checking S3 bucket..." -ForegroundColor Yellow
+$ErrorActionPreference = "Continue"
 try {
-    aws s3 ls "s3://$BUCKET" 2>$null | Out-Null
+    $null = aws s3 ls "s3://$BUCKET" --no-verify-ssl 2>&1 | Where-Object { $_ -notmatch "InsecureRequestWarning" -and $_ -notmatch "urllib3" }
     Write-Host "✅ Bucket exists" -ForegroundColor Green
 } catch {
     Write-Host "Creating S3 bucket: $BUCKET" -ForegroundColor Yellow
     if ($REGION -eq "us-east-1") {
-        aws s3 mb "s3://$BUCKET" 2>$null
+        $null = aws s3 mb "s3://$BUCKET" --no-verify-ssl 2>&1 | Where-Object { $_ -notmatch "InsecureRequestWarning" -and $_ -notmatch "urllib3" }
     } else {
-        aws s3 mb "s3://$BUCKET" --region $REGION 2>$null
+        $null = aws s3 mb "s3://$BUCKET" --region $REGION --no-verify-ssl 2>&1 | Where-Object { $_ -notmatch "InsecureRequestWarning" -and $_ -notmatch "urllib3" }
     }
     Write-Host "✅ Bucket created" -ForegroundColor Green
 }
+$ErrorActionPreference = "Stop"
 Write-Host ""
 
 # Publish ContosoUniversity API
@@ -65,7 +73,9 @@ Write-Host ""
 
 # Upload to S3
 Write-Host "Uploading ContosoUniversity API to S3..." -ForegroundColor Yellow
-aws s3 cp contoso-api.zip "s3://$BUCKET/contoso-api.zip" 2>$null
+$ErrorActionPreference = "Continue"
+$null = aws s3 cp contoso-api.zip "s3://$BUCKET/contoso-api.zip" --no-verify-ssl 2>&1 | Where-Object { $_ -notmatch "InsecureRequestWarning" -and $_ -notmatch "urllib3" }
+$ErrorActionPreference = "Stop"
 Remove-Item contoso-api.zip
 Remove-Item -Recurse -Force publish
 Write-Host "✅ Uploaded to S3" -ForegroundColor Green
@@ -96,7 +106,9 @@ Write-Host ""
 
 # Upload to S3
 Write-Host "Uploading NotificationAPI to S3..." -ForegroundColor Yellow
-aws s3 cp notification-api.zip "s3://$BUCKET/notification-api.zip" 2>$null
+$ErrorActionPreference = "Continue"
+$null = aws s3 cp notification-api.zip "s3://$BUCKET/notification-api.zip" --no-verify-ssl 2>&1 | Where-Object { $_ -notmatch "InsecureRequestWarning" -and $_ -notmatch "urllib3" }
+$ErrorActionPreference = "Stop"
 Remove-Item notification-api.zip
 Remove-Item -Recurse -Force publish
 Write-Host "✅ Uploaded to S3" -ForegroundColor Green

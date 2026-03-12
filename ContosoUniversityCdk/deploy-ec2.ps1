@@ -3,6 +3,9 @@
 
 $ErrorActionPreference = "Continue"
 
+# Disable SSL verification for Node.js (CDK)
+$env:NODE_TLS_REJECT_UNAUTHORIZED = "0"
+
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host "Contoso University EC2 Deployment" -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
@@ -77,8 +80,9 @@ Write-Host ""
 Write-Host "Step 1: Checking CDK bootstrap..." -ForegroundColor Yellow
 $bootstrapped = $false
 try {
-    $stackOutput = aws cloudformation describe-stacks --stack-name CDKToolkit --region $REGION --no-verify-ssl 2>&1
-    if ($stackOutput -match "CDKToolkit") {
+    # Check if SSM parameter exists (more reliable than stack check)
+    $ssmCheck = aws ssm get-parameter --name /cdk-bootstrap/hnb659fds/version --region $REGION --no-verify-ssl 2>&1
+    if ($ssmCheck -match "Value") {
         $bootstrapped = $true
     }
 } catch {
@@ -89,7 +93,13 @@ if ($bootstrapped) {
     Write-Host "✅ CDK already bootstrapped" -ForegroundColor Green
 } else {
     Write-Host "Bootstrapping CDK (this may take a few minutes)..." -ForegroundColor Yellow
-    cdk bootstrap "aws://$ACCOUNT/$REGION"
+    Write-Host "Running: cdk bootstrap aws://$ACCOUNT/$REGION" -ForegroundColor Gray
+    cdk bootstrap "aws://$ACCOUNT/$REGION" --no-verify-ssl
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "❌ Error: CDK bootstrap failed" -ForegroundColor Red
+        Write-Host "Please check your AWS credentials and permissions" -ForegroundColor Yellow
+        exit 1
+    }
     Write-Host "✅ CDK bootstrapped" -ForegroundColor Green
 }
 Write-Host ""
@@ -162,6 +172,28 @@ if ($LASTEXITCODE -ne 0) {
 
 Write-Host ""
 Write-Host "✅ Infrastructure deployed!" -ForegroundColor Green
+Write-Host ""
+
+# Step 4.5: Update EC2 instances with applications
+Write-Host "Step 4.5: Deploying applications to EC2 instances..." -ForegroundColor Yellow
+Write-Host "This will download and start the applications on the EC2 instances" -ForegroundColor Gray
+Write-Host ""
+
+$updateScript = Join-Path $PSScriptRoot "scripts\update-instances.ps1"
+if (Test-Path $updateScript) {
+    & $updateScript
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "⚠️  Warning: Failed to update instances automatically" -ForegroundColor Yellow
+        Write-Host "You can manually update later with: .\scripts\update-instances.ps1" -ForegroundColor Yellow
+    } else {
+        Write-Host "✅ Applications deployed to instances" -ForegroundColor Green
+        Write-Host ""
+        Write-Host "Waiting 30 seconds for services to start..." -ForegroundColor Yellow
+        Start-Sleep -Seconds 30
+    }
+} else {
+    Write-Host "⚠️  Warning: update-instances.ps1 not found" -ForegroundColor Yellow
+}
 Write-Host ""
 
 # Step 5: Get ALB URL and rebuild React UI
