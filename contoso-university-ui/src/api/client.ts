@@ -23,7 +23,7 @@ const apiClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  withCredentials: true, // For authentication cookies (Windows Authentication)
+  withCredentials: false, // Disabled for now - enable when authentication is implemented
   timeout: 30000, // 30 second timeout
 });
 

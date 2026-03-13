@@ -31,25 +31,11 @@ namespace ContosoUniversity
             {
                 options.AddPolicy("ReactApp", policy =>
                 {
-                    // Build list of allowed origins
-                    var allowedOrigins = new List<string>
-                    {
-                        "http://localhost:5173",  // Vite dev server default port
-                        "http://localhost:3000",  // Alternative dev port
-                        "http://localhost:4173"   // Vite preview port
-                    };
-
-                    // Add CloudFront origin from environment variable if provided
-                    var cloudFrontOrigin = builder.Configuration["CORS:AllowedOrigins"];
-                    if (!string.IsNullOrEmpty(cloudFrontOrigin))
-                    {
-                        allowedOrigins.Add(cloudFrontOrigin);
-                    }
-
-                    policy.WithOrigins(allowedOrigins.ToArray())
+                    // Allow all origins for demo purposes
+                    policy.AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader()
-                        .AllowCredentials();
+                        .WithExposedHeaders("*");
                 });
             });
 
@@ -157,6 +143,9 @@ namespace ContosoUniversity
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            // Fallback to index.html for client-side routing (React Router)
+            app.MapFallbackToFile("index.html");
 
             app.Run();
         }

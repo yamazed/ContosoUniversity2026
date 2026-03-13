@@ -23,6 +23,9 @@ namespace ContosoUniversityCdk
             // Allow HTTP from anywhere (for demo purposes)
             apiSecurityGroup.AddIngressRule(Peer.AnyIpv4(), Port.Tcp(80), "Allow HTTP from anywhere");
             apiSecurityGroup.AddIngressRule(Peer.AnyIpv4(), Port.Tcp(8080), "Allow HTTP on 8080 from anywhere");
+            
+            // Allow PostgreSQL from within the security group (for database access)
+            apiSecurityGroup.AddIngressRule(apiSecurityGroup, Port.Tcp(5432), "Allow PostgreSQL from same security group");
 
             // Database
             var database = new DatabaseConstruct(this, "Database", networking.Vpc, apiSecurityGroup, 0.5, 2.0);

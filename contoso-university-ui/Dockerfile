@@ -1,0 +1,13 @@
+# Production stage - serve pre-built files
+FROM nginx:alpine
+
+# Copy pre-built files to nginx
+COPY dist /usr/share/nginx/html
+
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 80
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

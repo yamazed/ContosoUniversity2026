@@ -1,0 +1,23 @@
+{
+  "ContosoUniversityStack": {
+    "SqsQueueArn": "arn:aws:sqs:us-east-1:981461568039:contoso-notifications",
+    "ComputeNotificationApiUrlE57CE98F": "http://44.195.78.173:8080",
+    "DatabaseDatabaseSecretArn884B6F93": "arn:aws:secretsmanager:us-east-1:981461568039:secret:DatabaseDbSecret1098DC6E-4nadVqeJf8zo-8vrABQ",
+    "CloudFrontDistributionId": "E2BPO9RIULNUA5",
+    "FrontendWebsiteBucketNameF22CAB19": "contosouniversitystack-frontendwebsitebucket77b0e9-gurjgfopej3h",
+    "FrontendCloudFrontDistributionIdC60423D7": "E2BPO9RIULNUA5",
+    "SqsQueueUrl": "https://sqs.us-east-1.amazonaws.com/981461568039/contoso-notifications",
+    "VpcId": "vpc-0d5655282a5164dfe",
+    "ComputeInstancePublicIp939CCFF7": "44.195.78.173",
+    "DatabaseSecretArn": "arn:aws:secretsmanager:us-east-1:981461568039:secret:DatabaseDbSecret1098DC6E-4nadVqeJf8zo-8vrABQ",
+    "FrontendBucketName": "contosouniversitystack-frontendwebsitebucket77b0e9-gurjgfopej3h",
+    "CloudFrontDistributionUrl": "https://d12kht01nhs68u.cloudfront.net",
+    "MessagingNotificationQueueUrlE81CCCF0": "https://sqs.us-east-1.amazonaws.com/981461568039/contoso-notifications",
+    "MessagingNotificationQueueArn71E31B41": "arn:aws:sqs:us-east-1:981461568039:contoso-notifications",
+    "FrontendCloudFrontUrlD7235372": "https://d12kht01nhs68u.cloudfront.net",
+    "DatabaseDatabaseEndpoint55DA5326": "contosouniversitystack-databaseauroracluster35ae33-vwweu6wplqkh.cluster-cglw06ya4k77.us-east-1.rds.amazonaws.com",
+    "ComputeApiUrlF350A5B5": "http://44.195.78.173",
+    "DatabaseEndpoint": "contosouniversitystack-databaseauroracluster35ae33-vwweu6wplqkh.cluster-cglw06ya4k77.us-east-1.rds.amazonaws.com",
+    "ComputeDeploymentBucket": "contoso-deployment-981461568039"
+  }
+}

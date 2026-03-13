@@ -22,6 +22,16 @@ namespace ContosoUniversityCdk
                 }
             });
 
+            // Test stack (NotificationAPI only)
+            new ContosoUniversityStackTest(app, "ContosoUniversityTestStack", new StackProps
+            {
+                Env = new Amazon.CDK.Environment
+                {
+                    Account = account,
+                    Region = region
+                }
+            });
+
             app.Synth();
         }
     }

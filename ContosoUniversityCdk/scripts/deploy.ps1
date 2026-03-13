@@ -41,7 +41,7 @@ Write-Host ""
 # Step 3: Deploy CDK stack
 Write-Host "Step 3/3: Deploying CDK stack..." -ForegroundColor Yellow
 Write-Host "This may take 10-15 minutes..." -ForegroundColor Gray
-cdk deploy --require-approval never
+cdk deploy ContosoUniversityStack --require-approval never
 
 Write-Host ""
 Write-Host "==========================================" -ForegroundColor Green
@@ -50,7 +50,7 @@ Write-Host "==========================================" -ForegroundColor Green
 Write-Host ""
 Write-Host "Stack outputs:" -ForegroundColor Cyan
 try {
-    cdk deploy --outputs-file outputs.json --require-approval never
+    cdk deploy ContosoUniversityStack --outputs-file outputs.json --require-approval never
     if (Test-Path outputs.json) {
         Get-Content outputs.json | ConvertFrom-Json | ConvertTo-Json -Depth 10
     }
