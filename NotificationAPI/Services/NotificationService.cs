@@ -7,6 +7,7 @@ using Amazon.Runtime.CredentialManagement;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using NotificationAPI.Models;
+using NotificationAPI.Repositories;
 using Newtonsoft.Json;
 
 namespace NotificationAPI.Services
@@ -16,11 +17,16 @@ namespace NotificationAPI.Services
         private readonly AmazonSQSClient _sqsClient;
         private readonly string _queueUrl;
         private readonly string _queueName;
+        private readonly INotificationRepository _repository;
         private readonly ILogger<NotificationService>? _logger;
 
-        public NotificationService(IConfiguration configuration, ILogger<NotificationService>? logger = null)
+        public NotificationService(
+            IConfiguration configuration, 
+            INotificationRepository repository,
+            ILogger<NotificationService>? logger = null)
         {
             _logger = logger;
+            _repository = repository;
             
             // Get queue name from configuration for logging/debugging (retained for compatibility)
             _queueName = configuration["NotificationQueuePath"] ?? "ContosoUniversityNotifications";
@@ -54,67 +60,130 @@ namespace NotificationAPI.Services
             }
         }
 
-        public void SendNotification(string entityType, string entityId, EntityOperation operation, string userName = null)
+        // Enhanced async version that persists to database
+        public async Task<Notification> SendNotificationAsync(string entityType, string entityId, string? entityDisplayName, EntityOperation operation, string? userName = null)
         {
-            SendNotification(entityType, entityId, null, operation, userName);
-        }
+            var notification = new Notification
+            {
+                EntityType = entityType,
+                EntityId = entityId,
+                Operation = operation.ToString(),
+                Message = GenerateMessage(entityType, entityId, entityDisplayName, operation),
+                CreatedAt = DateTime.UtcNow,
+                CreatedBy = userName ?? "System",
+                IsRead = false,
+                ReadAt = null
+            };
 
-        public void SendNotification(string entityType, string entityId, string? entityDisplayName, EntityOperation operation, string? userName = null)
-        {
             try
             {
-                var notification = new Notification
-                {
-                    EntityType = entityType,
-                    EntityId = entityId,
-                    Operation = operation.ToString(),
-                    Message = GenerateMessage(entityType, entityId, entityDisplayName, operation),
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = userName ?? "System",
-                    IsRead = false
-                };
+                // Primary operation: Save to database
+                notification = await _repository.CreateAsync(notification);
+                _logger?.LogInformation("Notification persisted to database. Id: {Id}, EntityType: {EntityType}, EntityId: {EntityId}", 
+                    notification.Id, entityType, entityId);
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogError(ex, "Failed to persist notification to database. EntityType: {EntityType}, EntityId: {EntityId}", 
+                    entityType, entityId);
+                throw; // Fail fast if database operation fails
+            }
 
-                // Serialize notification to JSON
+            // Secondary operation: Send to SQS (best-effort)
+            try
+            {
                 var messageBody = JsonConvert.SerializeObject(notification);
-
-                _logger?.LogDebug("Sending notification to SQS: {EntityType} {EntityId} - {Operation}", entityType, entityId, operation);
-
-                // Create SendMessageRequest
                 var sendRequest = new SendMessageRequest
                 {
                     QueueUrl = _queueUrl,
                     MessageBody = messageBody
                 };
 
-                // Send message to SQS
-                var response = _sqsClient.SendMessageAsync(sendRequest).GetAwaiter().GetResult();
-                
-                _logger?.LogInformation("Notification sent successfully to SQS. MessageId: {MessageId}, EntityType: {EntityType}, EntityId: {EntityId}, Operation: {Operation}", 
-                    response.MessageId, entityType, entityId, operation);
+                var response = await _sqsClient.SendMessageAsync(sendRequest);
+                _logger?.LogInformation("Notification sent to SQS. MessageId: {MessageId}, NotificationId: {Id}", 
+                    response.MessageId, notification.Id);
             }
             catch (Amazon.SQS.AmazonSQSException sqsEx)
             {
-                // Log SQS-specific errors with more detail
-                _logger?.LogError(sqsEx, "AWS SQS error sending notification. ErrorCode: {ErrorCode}, StatusCode: {StatusCode}, EntityType: {EntityType}, EntityId: {EntityId}, Operation: {Operation}", 
-                    sqsEx.ErrorCode, sqsEx.StatusCode, entityType, entityId, operation);
-                System.Diagnostics.Debug.WriteLine($"AWS SQS error sending notification: {sqsEx.ErrorCode} - {sqsEx.Message}");
+                _logger?.LogError(sqsEx, "AWS SQS error sending notification (database save succeeded). ErrorCode: {ErrorCode}, NotificationId: {Id}", 
+                    sqsEx.ErrorCode, notification.Id);
             }
             catch (Exception ex)
             {
-                // Log error but don't break the main operation
-                _logger?.LogError(ex, "Failed to send notification. EntityType: {EntityType}, EntityId: {EntityId}, Operation: {Operation}", 
-                    entityType, entityId, operation);
-                System.Diagnostics.Debug.WriteLine($"Failed to send notification: {ex.Message}");
+                _logger?.LogError(ex, "Failed to send notification to SQS (database save succeeded). NotificationId: {Id}", 
+                    notification.Id);
             }
+
+            return notification;
         }
 
+        // Legacy sync version for backward compatibility
+        public void SendNotification(string entityType, string entityId, EntityOperation operation, string? userName = null)
+        {
+            SendNotification(entityType, entityId, null, operation, userName);
+        }
+
+        public void SendNotification(string entityType, string entityId, string? entityDisplayName, EntityOperation operation, string? userName = null)
+        {
+            // Call async version synchronously for backward compatibility
+            SendNotificationAsync(entityType, entityId, entityDisplayName, operation, userName).GetAwaiter().GetResult();
+        }
+
+        // New methods for database operations
+        public async Task<(List<Notification>, PaginationMetadata)> GetNotificationsAsync(bool? isRead = null, int page = 1, int pageSize = 20)
+        {
+            var (notifications, totalCount) = await _repository.GetAllAsync(isRead, page, pageSize);
+            
+            var totalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
+            var metadata = new PaginationMetadata
+            {
+                TotalCount = totalCount,
+                CurrentPage = page,
+                PageSize = pageSize,
+                TotalPages = totalPages
+            };
+            
+            return (notifications, metadata);
+        }
+
+        public async Task<Notification?> GetNotificationByIdAsync(int id)
+        {
+            return await _repository.GetByIdAsync(id);
+        }
+
+        public async Task<Notification?> MarkAsReadAsync(int id)
+        {
+            var success = await _repository.MarkAsReadAsync(id);
+            if (!success) return null;
+            
+            return await _repository.GetByIdAsync(id);
+        }
+
+        public async Task<Notification?> MarkAsUnreadAsync(int id)
+        {
+            var success = await _repository.MarkAsUnreadAsync(id);
+            if (!success) return null;
+            
+            return await _repository.GetByIdAsync(id);
+        }
+
+        public async Task<int> BulkMarkAsReadAsync(List<int> ids)
+        {
+            return await _repository.BulkMarkAsReadAsync(ids);
+        }
+
+        public async Task<int> CleanupOldNotificationsAsync(int olderThanDays)
+        {
+            return await _repository.DeleteOldNotificationsAsync(olderThanDays, onlyRead: true);
+        }
+
+        // Legacy SQS receive method (kept for backward compatibility but not used)
         public Notification? ReceiveNotification()
         {
             try
             {
                 _logger?.LogDebug("Attempting to receive notification from SQS queue: {QueueUrl}", _queueUrl);
 
-                // Create ReceiveMessageRequest
                 var receiveRequest = new ReceiveMessageRequest
                 {
                     QueueUrl = _queueUrl,
@@ -122,28 +191,19 @@ namespace NotificationAPI.Services
                     WaitTimeSeconds = 0
                 };
 
-                // Receive message from SQS
                 var receiveResponse = _sqsClient.ReceiveMessageAsync(receiveRequest).GetAwaiter().GetResult();
 
-                // Check if any messages were received
                 if (receiveResponse?.Messages?.Count > 0)
                 {
                     var message = receiveResponse.Messages[0];
-                    _logger?.LogDebug("Received message from SQS. MessageId: {MessageId}, Body: {Body}", message.MessageId, message.Body);
-
-                    // Deserialize JSON message body to Notification object
                     var notification = JsonConvert.DeserializeObject<Notification>(message.Body);
 
                     if (notification == null)
                     {
-                        _logger?.LogWarning("Failed to deserialize notification from message body. MessageId: {MessageId}, Body: {Body}", message.MessageId, message.Body);
+                        _logger?.LogWarning("Failed to deserialize notification from message body. MessageId: {MessageId}", message.MessageId);
                         return null;
                     }
-                    
-                    _logger?.LogDebug("Deserialized notification: EntityType={EntityType}, EntityId={EntityId}, Operation={Operation}, Message={Message}, CreatedBy={CreatedBy}, CreatedAt={CreatedAt}", 
-                        notification.EntityType, notification.EntityId, notification.Operation, notification.Message, notification.CreatedBy, notification.CreatedAt);
 
-                    // Delete message from queue after successful retrieval
                     var deleteRequest = new DeleteMessageRequest
                     {
                         QueueUrl = _queueUrl,
@@ -151,35 +211,17 @@ namespace NotificationAPI.Services
                     };
                     _sqsClient.DeleteMessageAsync(deleteRequest).GetAwaiter().GetResult();
 
-                    _logger?.LogInformation("Notification received and deleted from SQS. MessageId: {MessageId}, EntityType: {EntityType}, EntityId: {EntityId}", 
-                        message.MessageId, notification.EntityType, notification.EntityId);
-
+                    _logger?.LogInformation("Notification received and deleted from SQS. MessageId: {MessageId}", message.MessageId);
                     return notification;
                 }
 
-                // Return null when no messages available
-                _logger?.LogDebug("No messages available in SQS queue");
-                return null;
-            }
-            catch (Amazon.SQS.AmazonSQSException sqsEx)
-            {
-                _logger?.LogError(sqsEx, "AWS SQS error receiving notification. ErrorCode: {ErrorCode}, StatusCode: {StatusCode}", 
-                    sqsEx.ErrorCode, sqsEx.StatusCode);
-                System.Diagnostics.Debug.WriteLine($"AWS SQS error receiving notification: {sqsEx.ErrorCode} - {sqsEx.Message}");
                 return null;
             }
             catch (Exception ex)
             {
                 _logger?.LogError(ex, "Failed to receive notification from SQS");
-                System.Diagnostics.Debug.WriteLine($"Failed to receive notification: {ex.Message}");
                 return null;
             }
-        }
-
-        public void MarkAsRead(int notificationId)
-        {
-            // In a real implementation, you might want to store notifications in database as well
-            // for persistence and tracking read status
         }
 
         private string GenerateMessage(string entityType, string entityId, string? entityDisplayName, EntityOperation operation)
@@ -200,6 +242,5 @@ namespace NotificationAPI.Services
                     return $"{displayText} operation: {operation}";
             }
         }
-
     }
 }

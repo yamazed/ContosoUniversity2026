@@ -1,0 +1,81 @@
+# Implementation Plan
+
+- [x] 1. Write bug condition exploration test
+  - **Property 1: Bug Condition** - SQS Operations Use Incorrect Queue
+  - **CRITICAL**: This test MUST FAIL on unfixed code - failure confirms the bug exists
+  - **DO NOT attempt to fix the test or the code when it fails**
+  - **NOTE**: This test encodes the expected behavior - it will validate the fix when it passes after implementation
+  - **GOAL**: Surface counterexamples that demonstrate the bug exists
+  - **Scoped PBT Approach**: Scope the property to concrete failing cases - POST to /api/notifications and GET /api/notifications with the incorrect queue URL
+  - Test that POST /api/notifications with valid notification data fails with SQS permission error for "contoso-queue"
+  - Test that GET /api/notifications returns 204 No Content because ReceiveNotification() fails to read from incorrect queue
+  - Examine application logs for AmazonSQSException with ErrorCode indicating permission denied for "contoso-queue" ARN
+  - Test that multiple rapid notifications all fail due to queue name mismatch
+  - Run test on UNFIXED code
+  - **EXPECTED OUTCOME**: Test FAILS (this is correct - it proves the bug exists)
+  - Document counterexamples found to understand root cause (e.g., "POST /api/notifications returns 500 with SQS permission error", "Logs show AWS SQS error for contoso-queue")
+  - Mark task complete when test is written, run, and failure is documented
+  - _Requirements: 2.1, 2.2, 2.3, 2.4_
+
+- [x] 2. Write preservation property tests (BEFORE implementing fix)
+  - **Property 2: Preservation** - Non-SQS Functionality Unchanged
+  - **IMPORTANT**: Follow observation-first methodology
+  - Observe behavior on UNFIXED code for non-SQS operations:
+    - POST /api/notifications with missing EntityType returns 400 Bad Request
+    - POST /api/notifications with invalid Operation returns 400 Bad Request
+    - Request validation error messages and formats
+    - Logging behavior for request processing and validation errors
+    - CORS headers and policy for cross-origin requests
+    - NotificationService initialization (credential loading, region configuration)
+  - Write property-based tests capturing observed behavior patterns:
+    - Generate random invalid request bodies (missing fields, wrong types) and verify validation behavior is preserved
+    - Verify log message formats remain unchanged for various scenarios
+    - Verify CORS policy continues to work correctly
+    - Verify service initialization behavior remains unchanged
+  - Property-based testing generates many test cases for stronger guarantees
+  - Run tests on UNFIXED code
+  - **EXPECTED OUTCOME**: Tests PASS (this confirms baseline behavior to preserve)
+  - Mark task complete when tests are written, run, and passing on unfixed code
+  - _Requirements: 3.1, 3.2, 3.3, 3.4_
+
+- [x] 3. Fix for notification system queue configuration
+
+  - [x] 3.1 Implement the fix
+    - Update NotificationAPI/appsettings.json
+    - Change AWS.SQS.QueueUrl from "https://sqs.us-east-1.amazonaws.com/981461568039/contoso-queue" to "https://sqs.us-east-1.amazonaws.com/981461568039/contoso-notifications"
+    - Verify Region configuration remains "us-east-1" (no change needed)
+    - No code changes required in NotificationService.cs (correctly reads from configuration)
+    - Restart NotificationAPI service to load new configuration value
+    - _Bug_Condition: isBugCondition(input) where input.queueUrl == "https://sqs.us-east-1.amazonaws.com/981461568039/contoso-queue" AND input.operation IN [SendMessage, ReceiveMessage]_
+    - _Expected_Behavior: For all SQS operations, result.success == true AND result.error == null AND messages are successfully sent/received from correct queue_
+    - _Preservation: All HTTP request processing, validation logic, logging operations, and service initialization that do NOT involve SQS queue URL usage must produce exactly the same behavior_
+    - _Requirements: 2.1, 2.2, 2.3, 2.4, 3.1, 3.2, 3.3, 3.4_
+
+  - [x] 3.2 Verify bug condition exploration test now passes
+    - **Property 1: Expected Behavior** - SQS Operations Use Correct Queue
+    - **IMPORTANT**: Re-run the SAME test from task 1 - do NOT write a new test
+    - The test from task 1 encodes the expected behavior
+    - When this test passes, it confirms the expected behavior is satisfied
+    - Run bug condition exploration test from step 1
+    - **EXPECTED OUTCOME**: Test PASSES (confirms bug is fixed)
+    - Verify POST /api/notifications successfully persists to SQS and returns 200 OK
+    - Verify GET /api/notifications successfully retrieves notifications from correct queue
+    - Verify logs show successful SQS operations with "contoso-notifications" queue
+    - _Requirements: 2.1, 2.2, 2.3, 2.4_
+
+  - [x] 3.3 Verify preservation tests still pass
+    - **Property 2: Preservation** - Non-SQS Functionality Unchanged
+    - **IMPORTANT**: Re-run the SAME tests from task 2 - do NOT write new tests
+    - Run preservation property tests from step 2
+    - **EXPECTED OUTCOME**: Tests PASS (confirms no regressions)
+    - Confirm request validation behavior unchanged (400 Bad Request for invalid requests)
+    - Confirm logging behavior unchanged (same log message formats)
+    - Confirm CORS policy unchanged
+    - Confirm service initialization unchanged
+    - _Requirements: 3.1, 3.2, 3.3, 3.4_
+
+- [x] 4. Checkpoint - Ensure all tests pass
+  - Ensure all tests pass, ask the user if questions arise.
+  - Verify full integration flow: Contoso API sends notification → NotificationAPI persists to SQS → GET retrieves notification
+  - Verify notifications appear in React UI after creating/updating/deleting entities
+  - Verify multiple rapid notifications are all successfully queued and retrievable

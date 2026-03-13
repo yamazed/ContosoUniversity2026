@@ -11,16 +11,27 @@ const notificationApiClient = axios.create({
   timeout: 30000,
 });
 
+// Paginated response type
+interface PaginatedResponse<T> {
+  data: T[];
+  pagination: {
+    totalCount: number;
+    currentPage: number;
+    pageSize: number;
+    totalPages: number;
+  };
+}
+
 export const notificationsApi = {
   /**
    * Get all notifications ordered by creation date (newest first)
    */
   getAll: async (): Promise<Notification[]> => {
-    const response = await notificationApiClient.get<Notification[]>('/notifications');
+    const response = await notificationApiClient.get<PaginatedResponse<Notification>>('/notifications');
     console.log('Notifications API response:', response.data);
     
-    // NotificationAPI returns array directly, not wrapped in ApiResponse
-    return response.data || [];
+    // Extract data array from paginated response
+    return response.data?.data || [];
   },
 
   /**
@@ -35,7 +46,7 @@ export const notificationsApi = {
    * Mark a notification as read
    */
   markAsRead: async (id: number): Promise<Notification> => {
-    const response = await notificationApiClient.post<Notification>(`/notifications/${id}/mark-read`);
+    const response = await notificationApiClient.put<Notification>(`/notifications/${id}/read`);
     return response.data;
   },
 };
