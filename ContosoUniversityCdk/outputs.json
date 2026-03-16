@@ -8,7 +8,7 @@
     "FrontendCloudFrontDistributionIdC60423D7": "E2BPO9RIULNUA5",
     "SqsQueueUrl": "https://sqs.us-east-1.amazonaws.com/981461568039/contoso-notifications",
     "VpcId": "vpc-0d5655282a5164dfe",
-    "ComputeInstancePublicIp939CCFF7": "44.195.78.173",
+    "ComputeInstancePublicIp939CCFF7": "50.19.77.253",
     "DatabaseSecretArn": "arn:aws:secretsmanager:us-east-1:981461568039:secret:DatabaseDbSecret1098DC6E-4nadVqeJf8zo-8vrABQ",
     "FrontendBucketName": "contosouniversitystack-frontendwebsitebucket77b0e9-gurjgfopej3h",
     "CloudFrontDistributionUrl": "https://d12kht01nhs68u.cloudfront.net",

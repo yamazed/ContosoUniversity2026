@@ -164,7 +164,7 @@ Write-Host "This will create all infrastructure (VPC, ALB, EC2, RDS, S3, CloudFr
 Write-Host "This may take 15-20 minutes..." -ForegroundColor Gray
 Write-Host ""
 
-cdk deploy --require-approval never
+cdk deploy ContosoUniversityStack --require-approval never
 if ($LASTEXITCODE -ne 0) {
     Write-Host "❌ Error: CDK deployment failed" -ForegroundColor Red
     exit 1
@@ -226,7 +226,7 @@ if ([string]::IsNullOrEmpty($ALB_URL)) {
     
     # Redeploy to update React UI in S3
     Write-Host "Step 6: Redeploying to update React UI in S3..." -ForegroundColor Yellow
-    cdk deploy --require-approval never
+    cdk deploy ContosoUniversityStack --require-approval never
 }
 
 Write-Host ""
